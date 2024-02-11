@@ -63,5 +63,4 @@ void main() {
     names2[1] = "Bill"; // not possible
     names2[2] = "Elon"; // not possible
     */
-    print("");
 }
