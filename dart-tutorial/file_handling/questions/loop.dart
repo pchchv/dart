@@ -1,4 +1,4 @@
-/// 5, Write a dart program to create 100 files using loop.
+/// 5. Write a dart program to create 100 files using loop.
 import 'dart:io';
 
 void main() {
