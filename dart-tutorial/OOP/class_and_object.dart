@@ -33,6 +33,18 @@ class SimpleInterest{
     }
 }
 
+class Home{
+    String? name;
+    String? address;
+    int? numberOfRooms;
+
+    void display() {
+        print("Home name: $name");
+        print("Home address: $address");
+        print("Number of rooms in home: $numberOfRooms");
+    }
+}
+
 void main(){
     // Here animal is object of class Animal. 
     Animal animal = Animal();
