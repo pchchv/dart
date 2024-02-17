@@ -13,6 +13,14 @@ class Employee {
     }
 }
 
+class Student {
+    final _schoolname = "ABC School";
+
+    String getSchoolName() {
+        return _schoolname;
+    }
+}
+
 void main() {
     var employee = Employee();
     employee.setName("Jack");
@@ -20,4 +28,9 @@ void main() {
 
     employee._name = "John"; // It is working, but why?
     print(employee.getName());
+
+    var student = Student();
+    print(student.getSchoolName());
+    // This is not possible
+    //student._schoolname = "XYZ School";
 }
