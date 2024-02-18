@@ -25,6 +25,22 @@ class Tesla extends Car {
     }
 }
 
+class Employee {
+    // Constructor
+    Employee(String name, double salary) {
+        print("Employee constructor");
+        print("Name: $name");
+        print("Salary: $salary");
+    }
+}
+
+class Manager extends Employee {
+    // Constructor
+    Manager(String name, double salary) : super(name, salary) {
+        print("Manager constructor");
+    }
+}
+
 void main() {
     // Creating an object of the MacBook class
     MacBook macbook = MacBook();
@@ -34,4 +50,9 @@ void main() {
 
     var tesla = Tesla();
     tesla.display();
+
+    print("\n-------------------\n");
+
+    // ignore: unused_local_variable
+    Manager manager = Manager("John", 25000.0);
 }
