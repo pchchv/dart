@@ -25,6 +25,7 @@ class Tesla extends Car {
     }
 }
 
+/*
 class Employee {
     // Constructor
     Employee(String name, double salary) {
@@ -40,6 +41,22 @@ class Manager extends Employee {
         print("Manager constructor");
     }
 }
+*/
+
+class Employee {
+  // Named constructor
+  Employee.manager() {
+    print("Employee named constructor");
+  }
+}
+
+class Manager extends Employee {
+  // Named constructor
+  Manager.manager() : super.manager() {
+    print("Manager named constructor");
+  }
+}
+
 
 void main() {
     // Creating an object of the MacBook class
@@ -53,6 +70,11 @@ void main() {
 
     print("\n-------------------\n");
 
+    /*
     // ignore: unused_local_variable
     Manager manager = Manager("John", 25000.0);
+    */
+
+    // ignore: unused_local_variable
+    Manager manager = Manager.manager();
 }
