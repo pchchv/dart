@@ -93,6 +93,20 @@ class Person2 {
     }
 }
 
+// Singleton using dart factory
+class Singleton {
+    // static variable
+    static final Singleton _instance = Singleton._internal();
+ 
+    // factory constructor
+    factory Singleton() {
+        return _instance;
+    }
+    
+    // private constructor
+    Singleton._internal();
+} 
+
 void main() {
     // This works
     Area area = Area(10, 20);
@@ -134,4 +148,11 @@ void main() {
     print("Person1 name is : ${person3.name} with hashcode ${person3.hashCode}");
     print("Person2 name is : ${person4.name} with hashcode ${person4.hashCode}");
     print("Person3 name is : ${person5.name} with hashcode ${person5.hashCode}");
+
+    print("\n-----------\n");
+
+    Singleton obj1 = Singleton();
+    Singleton obj2 = Singleton();
+    print(obj1.hashCode);
+    print(obj2.hashCode);
 }
