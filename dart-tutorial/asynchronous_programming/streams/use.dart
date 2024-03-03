@@ -8,7 +8,10 @@ Stream<String> getUserName() async* {
     yield 'Smith';
 }
 
-// function that returns a stream
-Stream<String> getUserName2() {
-    return Stream.fromIterable(['Mark', 'John', 'Smith']);
+// main function
+void main() async {
+    // you can use await for loop to get the value from stream
+    await for (String name in getUserName()) {
+        print(name);
+    }
 }
