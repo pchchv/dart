@@ -25,7 +25,20 @@ void post() async {
     }  
 }
 
+void put() async {
+    var url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
+    // make http put request
+    var response = await http.put(url, body: {'title': 'foo', 'body': 'bar', 'userId': '1'});
+    // check the status code for the result  
+    if (response.statusCode == 200) {
+        print(response.body);
+    } else {
+        print('Request failed with status: ${response.statusCode}.');
+    }  
+}
+
 void main() {
     get();
     post();
+    put();
 }
