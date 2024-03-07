@@ -49,9 +49,22 @@ void patch() async {
     }
 }
 
+void delete() async {
+    var url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
+    // make http delete request
+    var response = await http.delete(url);
+    // check the status code for the result  
+    if (response.statusCode == 200) {
+        print(response.body);
+    } else {
+        print('Request failed with status: ${response.statusCode}.');
+    }
+}
+
 void main() {
     get();
     post();
     put();
     patch();
+    delete();
 }
