@@ -37,8 +37,21 @@ void put() async {
     }  
 }
 
+void patch() async {
+    var url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
+    // make http patch request
+    var response = await http.patch(url, body: {'title': 'foo'});
+    // check the status code for the result  
+    if (response.statusCode == 200) {
+        print(response.body);
+    } else {
+        print('Request failed with status: ${response.statusCode}.');
+    }
+}
+
 void main() {
     get();
     post();
     put();
+    patch();
 }
