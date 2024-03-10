@@ -55,7 +55,9 @@ void main() {
         ),
         body: Column(
           // Try replacing "center" with "start", "end", "spaceBetween", "spaceAround" or "spaceEvenly"
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
+                      // Try replacing "center" with "start", "end", "stretch", or "baseline"
+            crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(height: 100, width: 100, color: Colors.blue),
             const SizedBox(height: 5),
