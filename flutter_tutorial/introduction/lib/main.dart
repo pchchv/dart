@@ -44,6 +44,7 @@ void main() {
 }
 */
 
+/*
 void main() {
   runApp(
     MaterialApp(
@@ -63,6 +64,34 @@ void main() {
             Icon(Icons.star, color: Colors.yellow),
             Icon(Icons.star_border, color: Colors.yellow),
           ],
+        ),
+      ),
+    ),
+  );
+}
+*/
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Row In Flutter'),
+        ),
+        body: Container(
+          color: Colors.green,
+          height: double.infinity,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              // Try replacing "center" with "start", "end", "spaceAround", "spaceEvenly" or "spaceBetween"
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              // Try replacing "center" with "start", "end", "stretch" or "baseline"
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: List.generate(
+                  50, (index) => const Icon(Icons.star, color: Colors.yellow)),
+            ),
+          ),
         ),
       ),
     ),
