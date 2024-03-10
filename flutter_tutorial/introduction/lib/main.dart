@@ -53,7 +53,9 @@ void main() {
         ),
         body: const Row(
           // Try replacing "center" with "start", "end", "spaceBetween", "spaceAround" or "spaceEvenly"
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          // Try replacing "center" with "start", "end", "stretch" or "baseline"
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(Icons.star, color: Colors.yellow),
             Icon(Icons.star, color: Colors.yellow),
