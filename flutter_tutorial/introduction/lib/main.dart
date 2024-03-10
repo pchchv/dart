@@ -100,7 +100,7 @@ void main() {
 }
 */
 
-
+/*
 void main() {
   runApp(
     MaterialApp(
@@ -120,6 +120,34 @@ void main() {
                 50,
                 (index) =>  const Expanded(
                     child: Icon(Icons.star, color: Colors.yellow))),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+*/
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Row In Flutter'),
+        ),
+        body: Container(
+          color: Colors.green,
+          height: double.infinity,
+          child: Row(
+             // Try replacing "center" with "start", "end", "spaceAround", "spaceEvenly" or "spaceBetween"
+            mainAxisAlignment: MainAxisAlignment.start,
+             // Try replacing "center" with "start", "end", "stretch" or "baseline"
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: List.generate(
+                50,
+                (index) => const Flexible(
+                    fit: FlexFit.loose,
+                    child: Icon(Icons.star,  color: Colors.yellow))),
           ),
         ),
       ),
