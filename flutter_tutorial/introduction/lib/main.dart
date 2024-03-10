@@ -75,6 +75,7 @@ void main() {
 }
 */
 
+/*
 void main() {
   runApp(
     MaterialApp(
@@ -98,6 +99,36 @@ void main() {
                     child: Container(height: 100, width: 100, color: Colors.white),
                   )),
             ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+*/
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Column In Flutter'),
+        ),
+        body: Container(
+          color: Colors.green,
+          width: double.infinity,
+          child: Column(
+             // Try replacing "center" with "start", "end", "spaceAround", "spaceEvenly" or "spaceBetween"
+            mainAxisAlignment: MainAxisAlignment.start,
+            // Try replacing "center" with "start", "end", "stretch" or "baseline"
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: List.generate(
+                50,
+                (index) => Expanded(
+                    child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(height: 100, width: 100, color: Colors.white),
+                  ))),
           ),
         ),
       ),
