@@ -21,6 +21,7 @@ void main() {
 }
 */
 
+/*
 void main() {
   runApp(
     MaterialApp(
@@ -29,6 +30,32 @@ void main() {
           title: const Text('Column In Flutter'),
         ),
         body: Column(
+          children: [
+            Container(height: 100, width: 100, color: Colors.blue),
+            const SizedBox(height: 5),
+            Container(height: 100, width: 100, color: Colors.blue),
+            const SizedBox(height: 5),
+            Container(height: 100, width: 100, color: Colors.blue),
+            const SizedBox(height: 5),
+            Container(height: 100, width: 100, color: Colors.blue),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+*/
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Column In Flutter'),
+        ),
+        body: Column(
+          // Try replacing "center" with "start", "end", "spaceBetween", "spaceAround" or "spaceEvenly"
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(height: 100, width: 100, color: Colors.blue),
             const SizedBox(height: 5),
