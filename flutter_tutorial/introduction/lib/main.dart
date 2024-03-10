@@ -21,6 +21,7 @@ void main() {
 }
 */
 
+/*
 void main() {
   runApp(
     MaterialApp(
@@ -29,6 +30,30 @@ void main() {
           title: const Text('Row In Flutter'),
         ),
         body: const Row(
+          children: [
+            Icon(Icons.star, color: Colors.yellow),
+            Icon(Icons.star, color: Colors.yellow),
+            Icon(Icons.star, color: Colors.yellow),
+            Icon(Icons.star, color: Colors.yellow),
+            Icon(Icons.star_border, color: Colors.yellow),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+*/
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Row In Flutter'),
+        ),
+        body: const Row(
+          // Try replacing "center" with "start", "end", "spaceBetween", "spaceAround" or "spaceEvenly"
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.star, color: Colors.yellow),
             Icon(Icons.star, color: Colors.yellow),
