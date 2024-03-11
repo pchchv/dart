@@ -8,7 +8,7 @@ class CounterApp extends StatelessWidget {
   const CounterApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Counter App',
       home: CounterScreen(),
     );
