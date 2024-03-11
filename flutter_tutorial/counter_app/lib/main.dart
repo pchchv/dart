@@ -14,3 +14,62 @@ class CounterApp extends StatelessWidget {
     );
   }
 }
+
+class CounterScreen extends StatefulWidget {
+  const CounterScreen({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _CounterScreenState createState() => _CounterScreenState();
+}
+
+class _CounterScreenState extends State<CounterScreen> {
+  // Define the counter variable
+  int _counter = 0;
+
+  // Define the increment and decrement counter methods
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Counter App')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '$_counter',
+              style: const TextStyle(fontSize: 72),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children:[
+                FloatingActionButton(
+                  onPressed: _incrementCounter,
+                  tooltip: 'Add',
+                  child: const Icon(Icons.add),
+                ),
+                FloatingActionButton(
+                  onPressed: _decrementCounter,
+                  tooltip: 'Subtract',
+                  child: const Icon(Icons.remove),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
