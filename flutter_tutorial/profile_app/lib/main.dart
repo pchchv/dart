@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'about_section.dart';
+import 'contact_section.dart';
 
 void main() => runApp(const ProfileApp());
 
@@ -37,8 +39,41 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return DefaultTabController(
+      length: tabs.length,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 48, 160, 211),
+          titleTextStyle: const TextStyle(
+            color: Colors.white,
+          ),
+          toolbarHeight: 275,
+          title: Padding(
+            padding: const EdgeInsets.only(top: 35.0),
+            child: Column(
+              children: [
+                profilePhotos(),
+              ],
+            ),
+          ),
+          bottom: TabBar(
+            tabs: tabs,
+            indicatorColor: Colors.white,
+            indicatorSize: TabBarIndicatorSize.tab,
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            const SingleChildScrollView(
+              child: AboutSection(),
+            ),
+            SingleChildScrollView(
+              child: contactSection(),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Container profilePhotos() {
