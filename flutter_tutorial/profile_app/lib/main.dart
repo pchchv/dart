@@ -9,8 +9,10 @@ class ProfileApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ProfilePage(),
+    );
   }
 }
 
