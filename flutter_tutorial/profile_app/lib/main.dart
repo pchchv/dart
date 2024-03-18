@@ -56,6 +56,7 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 profilePhotos(),
                 profileName(),
+                hobbies(),
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
                   child: stats(),
@@ -114,6 +115,23 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
     );
   }
+  
+  Padding hobbies() {
+    return const Padding(
+      padding: EdgeInsets.only(
+        top: 5.0,
+        bottom: 5.0,
+      ),
+      child: Text(
+        "Traveller - Dreamer - Fighter",
+        style: TextStyle(
+          fontWeight: FontWeight.normal,
+          fontSize: 12,
+        ),
+      ),
+    );
+  }
+
   Row stats() {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
