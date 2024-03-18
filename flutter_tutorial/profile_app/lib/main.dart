@@ -40,4 +40,23 @@ class _ProfilePageState extends State<ProfilePage> {
     // TODO: implement build
     throw UnimplementedError();
   }
+
+  Container profilePhotos() {
+    return Container(
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.red,
+      ),
+      width: 105,
+      height: 105,
+      alignment: Alignment.center,
+      child: const CircleAvatar(
+        radius: 50,
+        backgroundColor: Colors.transparent,
+        backgroundImage: NetworkImage(
+          "https://picsum.photos/300/300",
+        ),
+      ),
+    );
+  }
 }
