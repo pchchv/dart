@@ -20,6 +20,21 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  List<Tab> tabs = [
+    const Tab(
+      text: "About",
+      icon: Icon(
+        Icons.account_box,
+      ),
+    ),
+    const Tab(
+      text: "Contact",
+      icon: Icon(
+        Icons.contact_page,
+      ),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
