@@ -55,6 +55,10 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 profilePhotos(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: stats(),
+                ),
               ],
             ),
           ),
@@ -94,6 +98,61 @@ class _ProfilePageState extends State<ProfilePage> {
           "https://picsum.photos/300/300",
         ),
       ),
+    );
+  }
+  Row stats() {
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          children: [
+            Text(
+              "Photos",
+              style: TextStyle(
+                color: Color.fromARGB(255, 28, 124, 172),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              "225",
+              style: TextStyle(fontWeight: FontWeight.normal),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            Text(
+              "Followers",
+              style: TextStyle(
+                color: Color.fromARGB(255, 28, 124, 172),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              "2736",
+              style: TextStyle(fontWeight: FontWeight.normal),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            Text(
+              "Following",
+              style: TextStyle(
+                color: Color.fromARGB(255, 28, 124, 172),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              "11",
+              style: TextStyle(fontWeight: FontWeight.normal),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
