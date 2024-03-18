@@ -55,6 +55,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 profilePhotos(),
+                profileName(),
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
                   child: stats(),
@@ -96,6 +97,19 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: Colors.transparent,
         backgroundImage: NetworkImage(
           "https://picsum.photos/300/300",
+        ),
+      ),
+    );
+  }
+  
+  Padding profileName() {
+    return const Padding(
+      padding: EdgeInsets.only(top: 8.0),
+      child: Text(
+        "Jack Pochechuev",
+        style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
