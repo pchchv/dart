@@ -24,7 +24,13 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        Image.network('https://picsum.photos/250?image=1'),
+        Image.network('https://picsum.photos/250?image=2'),
+        Image.network('https://picsum.photos/250?image=3'),
+      ],
+    );
   }
 }
