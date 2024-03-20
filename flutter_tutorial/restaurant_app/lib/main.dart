@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main() => runApp(const MenuApp());
+
+class MenuApp extends StatelessWidget {
+  const MenuApp({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
 }
 
 class MenuPage extends StatefulWidget {
