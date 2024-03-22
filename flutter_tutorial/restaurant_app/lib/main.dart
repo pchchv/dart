@@ -42,12 +42,17 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: items.length,
-      scrollDirection: Axis.vertical,
-      itemBuilder: (BuildContext context, int index) {
-        return items[index];
-      }
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Restaurant app'),
+      ),
+      body: ListView.builder(
+        itemCount: items.length,
+        scrollDirection: Axis.vertical,
+        itemBuilder: (BuildContext context, int index) {
+          return items[index];
+        }
+      )
     );
   }
 }
