@@ -53,6 +53,16 @@ class _MenuPageState extends State<MenuPage> {
         alignment: Alignment.center,
       ),
     ),
+    ListTile(
+      title: const Text('The Negroni is a cocktail typically made with Campari, sweet vermouth, gin, and a bit of orange peel.'),
+      subtitle: const Text('7.77'),
+      leading: Image.asset(
+        'assets/images/negroni.png',
+        width: 950,
+        height: 950,
+        alignment: Alignment.center,
+      ),
+    ),
   ];
 
   @override
