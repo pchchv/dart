@@ -26,17 +26,32 @@ class _MenuPageState extends State<MenuPage> {
     ListTile(
       title: const Text('Dish Description'),
       subtitle: const Text('8.33'),
-      leading: SizedBox(child: Image.network('https://picsum.photos/250?image=1')),
+      leading: Image.asset(
+        'assets/images/pasta_napoletana.png',
+        width: 950,
+        height: 950,
+        alignment: Alignment.center,
+      ),
     ),
     ListTile(
       title: const Text('Dish Description'),
       subtitle: const Text('8.33'),
-      leading: SizedBox(child: Image.network('https://picsum.photos/250?image=2')),
+      leading: Image.asset(
+        'assets/images/margherita.png',
+        width: 950,
+        height: 950,
+        alignment: Alignment.center,
+      ),
     ),
     ListTile(
       title: const Text('Dish Description'),
       subtitle: const Text('8.33'),
-      leading: SizedBox(child: Image.network('https://picsum.photos/250?image=3')),
+      leading: Image.asset(
+        'assets/images/pepperoni.png',
+        width: 950,
+        height: 950,
+        alignment: Alignment.center,
+      ),
     ),
   ];
 
