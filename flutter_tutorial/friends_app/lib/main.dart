@@ -10,7 +10,34 @@ class Friend {
 
 List<Friend> posts = [
   Friend(
-    name: 'John Doe',
+    name: 'John',
+  ),
+  Friend(
+    name: 'Jack',
+  ),
+  Friend(
+    name: 'Vladimir',
+  ),
+  Friend(
+    name: 'Max',
+  ),
+  Friend(
+    name: 'Vladislav',
+  ),
+  Friend(
+    name: 'Valeria',
+  ),
+  Friend(
+    name: 'Sasha',
+  ),
+  Friend(
+    name: 'Tanya',
+  ),
+  Friend(
+    name: 'Sasha',
+  ),
+  Friend(
+    name: 'Polly',
   ),
 ];
 
