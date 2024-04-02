@@ -14,7 +14,9 @@ List<Friend> posts = [
   ),
 ];
 
-void main() {}
+void main() {
+  runApp(const FriendsApp());
+}
 
 class FriendsApp extends StatelessWidget {
   const FriendsApp({super.key});
