@@ -6,4 +6,10 @@ class Friend {
   });
 }
 
+List<Friend> posts = [
+  Friend(
+    name: 'John Doe',
+  ),
+];
+
 void main() {}
