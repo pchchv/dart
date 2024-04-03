@@ -13,6 +13,7 @@ class ChessApp extends StatefulWidget {
 }
 
 class _ChessState extends State<ChessApp> {
+  late Color _color;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +24,13 @@ class _ChessState extends State<ChessApp> {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
           itemCount: 64,
           itemBuilder: (BuildContext context, int index) {
-            return const Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-              ),
+            if (index % 2 != 0) {
+              _color = const Color(0x00f0d9b5);
+            } else {
+              _color = const Color(0x00b58863);
+            }
+            return Card(
+              color: _color,
             );
           },
         )
