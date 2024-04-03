@@ -4,8 +4,15 @@ void main() {
   runApp(const ChessApp());
 }
 
-class ChessApp extends StatelessWidget {
+class ChessApp extends StatefulWidget {
   const ChessApp({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _ChessState createState() => _ChessState();
+}
+
+class _ChessState extends State<ChessApp> {
 
   @override
   Widget build(BuildContext context) {
