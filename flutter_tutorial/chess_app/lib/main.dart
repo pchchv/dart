@@ -13,8 +13,8 @@ class ChessApp extends StatelessWidget {
       home: Scaffold(
           appBar: AppBar(title: const Text('Photo Gallery')),
           body: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
-            itemCount: 1,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
+            itemCount: 64,
             itemBuilder: (BuildContext context, int index) {
               return const Card(
                 child: Column(
