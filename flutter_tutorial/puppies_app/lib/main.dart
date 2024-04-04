@@ -13,6 +13,21 @@ class PuppiesApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Puppies App"),
         ),
+        body: ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+            Image.asset('assets/images/puppy.jpg'),
+          ],
+        )
       ),
     );
   }
