@@ -41,9 +41,16 @@ class NamesApp extends StatelessWidget {
         body: ListView.builder(
           itemCount: names.length,
           itemBuilder: (BuildContext context, int index) {
+            MaterialColor color;
             String name = names[index].name;
+            if (name[0] == "A") {
+              color = Colors.green;
+            } else {
+              color = Colors.red;
+            }
             return ListTile(
               title: Text(name),
+              textColor: color,
             );
           },
         ),
