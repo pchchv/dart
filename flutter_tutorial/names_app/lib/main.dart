@@ -6,4 +6,22 @@ class Name {
   });
 }
 
+List<Name> names = [
+  Name(
+    name: "Jack"
+  ),
+  Name(
+    name: "Alex",
+  ),
+  Name(
+    name: "Kate",
+  ),
+  Name(
+    name: "John",
+  ),
+  Name(
+    name: "Anna",
+  ),
+];
+
 void main() {}
