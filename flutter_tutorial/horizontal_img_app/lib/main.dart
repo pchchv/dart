@@ -48,6 +48,7 @@ class ImagesPageState extends State<ImagesPage> {
             Image.network('https://picsum.photos/500?image=109'),
             Image.network('https://picsum.photos/500?image=110'),
             Image.network('https://picsum.photos/500?image=111'),
+            // TODO: Upgrade the scroll
           ],
         ),
       ),
