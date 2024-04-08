@@ -41,8 +41,9 @@ class NamesApp extends StatelessWidget {
         body: ListView.builder(
           itemCount: names.length,
           itemBuilder: (BuildContext context, int index) {
+            String name = names[index].name;
             return ListTile(
-              title: Text(names[index].name),
+              title: Text(name),
             );
           },
         ),
