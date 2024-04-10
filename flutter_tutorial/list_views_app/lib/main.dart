@@ -1,6 +1,24 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const ListViewsApp());
+}
+
+class ListViewsApp extends StatelessWidget {
+  const ListViewsApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('ListViewsApp'),
+        ),
+        body: const OuterListView(),
+      ),
+    );
+  }
+}
 
 class OuterListView extends StatelessWidget {
   const OuterListView({super.key});
