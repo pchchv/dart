@@ -1,6 +1,24 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const GridViewApp());
+}
+
+class GridViewApp extends StatelessWidget {
+  const GridViewApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('GridViewApp'),
+        ),
+        body: const GridViewW(),
+      ),
+    );
+  }
+}
 
 class GridViewW extends StatelessWidget {
   const GridViewW({super.key});
