@@ -8,6 +8,19 @@ class _InfiniteScrollingListViewState extends State<InfiniteScrollingListView> {
   bool _isLoading = false;
   int _currentPage = 1;
 
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_scrollListener);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   void _scrollListener() {
     if (_scrollController.offset >=
             _scrollController.position.maxScrollExtent &&
