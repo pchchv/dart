@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const GridApp());
+}
+
+class GridApp extends StatelessWidget {
+  const GridApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Aspect Ratio GridView",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const AspectRatioGridView(),
+    );
+  }
+}
 
 class AspectRatioGridView extends StatelessWidget {
   const AspectRatioGridView({super.key});
