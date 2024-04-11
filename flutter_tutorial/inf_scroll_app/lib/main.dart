@@ -1,4 +1,15 @@
+import 'package:flutter/material.dart';
+
 void main() {}
+
+class InfiniteScrollingListView extends StatefulWidget {
+  const InfiniteScrollingListView({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _InfiniteScrollingListViewState createState() =>
+      _InfiniteScrollingListViewState();
+}
 
 class _InfiniteScrollingListViewState extends State<InfiniteScrollingListView> {
   final List<int> _items = List.generate(20, (index) => index);
