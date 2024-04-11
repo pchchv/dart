@@ -5,6 +5,26 @@ void main() {}
 class AspectRatioGridView extends StatelessWidget {
   const AspectRatioGridView({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Aspect Ratio GridView"),
+      ),
+      body: GridView.builder(
+        itemCount: 20,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          mainAxisSpacing: 5.0,
+          crossAxisSpacing: 5.0,
+        ),
+        itemBuilder: (BuildContext context, int index) {
+          return index % 2 == 0 ? _buildSquareItem(index) : _buildWideItem(index);
+        },
+      ),
+    );
+  }
+
   Widget _buildSquareItem(int index) {
     return Container(
       width: 50,
