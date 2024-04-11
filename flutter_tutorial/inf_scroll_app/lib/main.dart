@@ -1,6 +1,12 @@
 void main() {}
 
 class _InfiniteScrollingListViewState extends State<InfiniteScrollingListView> {
+  final List<int> _items = List.generate(20, (index) => index);
+  final ScrollController _scrollController = ScrollController();
+
+  final int _totalPages = 5;
+  bool _isLoading = false;
+  int _currentPage = 1;
 
   void _scrollListener() {
     if (_scrollController.offset >=
