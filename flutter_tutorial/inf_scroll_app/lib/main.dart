@@ -44,6 +44,29 @@ class _InfiniteScrollingListViewState extends State<InfiniteScrollingListView> {
       });
     });
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Infinite Scrolling ListView"),
+      ),
+      body: ListView.builder(
+        itemCount: _items.length + 1,
+        itemBuilder: (BuildContext context, int index) {
+          if (index == _items.length) {
+            return _buildLoadingIndicator();
+          } else {
+            return ListTile(
+              title: Text('Item ${_items[index]}'),
+            );
+          }
+        },
+        controller: _scrollController,
+      ),
+    );
+  }
+
   Widget _buildLoadingIndicator() {
     return const Padding(
       padding: EdgeInsets.all(8.0),
