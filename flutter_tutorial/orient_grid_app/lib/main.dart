@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const OrientGridApp());
+}
+
+class OrientGridApp extends StatelessWidget {
+  const OrientGridApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Dynamic Column GridView",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const DynamicColumnGridView(),
+    );
+  }
+}
 
 class DynamicColumnGridView extends StatelessWidget {
   const DynamicColumnGridView({super.key});
