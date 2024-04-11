@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const InfScrollApp());
+}
+
+class InfScrollApp extends StatelessWidget {
+  const InfScrollApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Infinite Scrolling ListView",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const InfiniteScrollingListView(),
+    );
+  }
+}
 
 class InfiniteScrollingListView extends StatefulWidget {
   const InfiniteScrollingListView({super.key});
