@@ -18,4 +18,18 @@ class AspectRatioGridView extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildWideItem(int index) {
+    return Container(
+      width: 100,
+      height: 50,
+      color: Colors.green,
+      child: Center(
+        child: Text(
+          'Item $index',
+          style: const TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
 }
