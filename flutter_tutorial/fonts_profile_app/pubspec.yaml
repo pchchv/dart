@@ -86,6 +86,9 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  assets:
+    - assets/images/profile_photo.jpeg
+
   fonts:
     - family: JetBrainsMono
       fonts:
