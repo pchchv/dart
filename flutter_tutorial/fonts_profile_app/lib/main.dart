@@ -1,4 +1,22 @@
-void main() {}
+import "package:flutter/material.dart";
+
+void main() => runApp(const ProfileApp());
+
+class ProfileApp extends StatelessWidget {
+  const ProfileApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Profile App",
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        fontFamily: "JetBrainsMono",
+      ),
+      home: const ProfileScreen(),
+    );
+  }
+}
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
