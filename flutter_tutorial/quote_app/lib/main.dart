@@ -5,7 +5,7 @@ class Quote {
   Quote({
     required this.text,
     required this.from
-  })
+  });
 
   factory Quote.fromJSON(Map<String, dynamic> json) {
     return Quote(
