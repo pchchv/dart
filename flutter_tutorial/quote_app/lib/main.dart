@@ -19,19 +19,6 @@ class Quote {
   }
 }
 
-class OnlineService {
-  // Load and decode the JSON File
-  Future<Quote> loadQuote() async {
-    final response = await http.get(Uri.parse('https://jsonguide.technologychannel.org/quotes.json'));
-    if (response.statusCode == 200) {
-      final jsonResponse = json.decode(response.body);
-      return Quote.fromJSON(jsonResponse);
-    } else {
-      throw Exception('Failed to load data from server');
-    }
-  }
-}
-
 void main() {
   runApp(const QuoteApp());
 }
@@ -78,5 +65,33 @@ class _QuoteScreenState extends State<QuoteScreen> {
     } else {
       throw Exception('Failed to load quotes');
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Quotes'),
+      ),
+      body: _quotes.isEmpty
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: _quotes.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(
+                    _quotes[index].text,
+                    style: const TextStyle(fontSize: 18.0),
+                  ),
+                  subtitle: Text(
+                    _quotes[index].author,
+                    style: const TextStyle(fontSize: 14.0),
+                  ),
+                );
+              },
+            ),
+    );
   }
 }
