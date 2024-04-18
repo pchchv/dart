@@ -52,39 +52,43 @@ class QuoteApp extends StatelessWidget {
         body: FutureBuilder(
           future: OnlineService().loadQuote(),
           builder: (context, snapshot) {
-            Quote quote = snapshot.data as Quote;
-            return Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Card(
-                  elevation: 4.0,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          quote.text,
-                          style: const TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+            if (snapshot.hasData) {
+              Quote quote = snapshot.data as Quote;
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Card(
+                    elevation: 4.0,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            quote.text,
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          quote.from,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey[600],
+                          const SizedBox(height: 5),
+                          Text(
+                            quote.from,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey[600],
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                      ],
+                          const SizedBox(height: 5),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            );
+              );
+            } else {
+              return const Center(child: CircularProgressIndicator());
+            }
           },
         ),
       ),
