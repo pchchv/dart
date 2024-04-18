@@ -58,3 +58,25 @@ class QuoteScreen extends StatefulWidget {
   // ignore: library_private_types_in_public_api
   _QuoteScreenState createState() => _QuoteScreenState();
 }
+
+class _QuoteScreenState extends State<QuoteScreen> {
+  List<Quote> _quotes = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchQuotes();
+  }
+
+  Future<void> fetchQuotes() async {
+    final response = await http.get(Uri.parse('https://jsonguide.technologychannel.org/quotes.json'));
+    if (response.statusCode == 200) {
+      final List<dynamic> jsonQuotes = jsonDecode(response.body);
+      setState(() {
+        _quotes = jsonQuotes.map((json) => Quote.fromJSON(json)).toList();
+      });
+    } else {
+      throw Exception('Failed to load quotes');
+    }
+  }
+}
