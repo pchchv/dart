@@ -31,4 +31,11 @@ class OnlineService {
   }
 }
 
-void main() {}
+void main() {
+  runApp(const QuoteApp());
+}
+
+class QuoteApp extends StatelessWidget {
+  const QuoteApp({super.key});
+
+}
