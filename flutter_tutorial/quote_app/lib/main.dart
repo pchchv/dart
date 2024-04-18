@@ -41,57 +41,12 @@ class QuoteApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = "Quote app";
-
     return MaterialApp(
-      title: appTitle,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
-        body: FutureBuilder(
-          future: OnlineService().loadQuote(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              Quote quote = snapshot.data as Quote;
-              return Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Card(
-                    elevation: 4.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            quote.text,
-                            style: const TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 5),
-                          Text(
-                            quote.from,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                          const SizedBox(height: 5),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            } else {
-              return const Center(child: CircularProgressIndicator());
-            }
-          },
-        ),
+      title: 'Quote App',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
       ),
+      home: const QuoteScreen(),
     );
   }
 }
