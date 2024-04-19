@@ -15,7 +15,24 @@ class Quote {
   }
 }
 
-void main() {}
+void main() {
+  runApp(const QuoteApp());
+}
+
+class QuoteApp extends StatelessWidget {
+  const QuoteApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Quote App',
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      home: const QuoteScreen(),
+    );
+  }
+}
 
 class QuoteScreen extends StatefulWidget {
   const QuoteScreen({super.key});
