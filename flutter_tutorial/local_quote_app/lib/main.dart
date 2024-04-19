@@ -1,3 +1,7 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle; 
+
 class Quote {
   final String text;
   final String author;
@@ -43,8 +47,19 @@ class QuoteScreen extends StatefulWidget {
 }
 
 class _QuoteScreenState extends State<QuoteScreen> {
+   List<Quote> _quotes = [];
+
   @override
   void initState() {
     super.initState();
+    loadQuotesFromAsset();
+  }
+
+  Future<void> loadQuotesFromAsset() async {
+    final String jsonString = await rootBundle.loadString("assets/quotes.json");
+    final List<dynamic> jsonQuotes = jsonDecode(jsonString);
+    setState(() {
+      _quotes = jsonQuotes.map((json) => Quote.fromJSON(json)).toList();
+    });
   }
 }
