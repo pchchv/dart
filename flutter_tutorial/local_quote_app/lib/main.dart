@@ -43,4 +43,8 @@ class QuoteScreen extends StatefulWidget {
 }
 
 class _QuoteScreenState extends State<QuoteScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
 }
