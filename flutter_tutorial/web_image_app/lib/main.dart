@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:http/http.dart' as http;
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const ImageApp());
@@ -28,8 +28,36 @@ class ImageHomePage extends StatefulWidget {
 }
 
 class ImageyHomePageState extends State<ImageHomePage> {
+  String imageUrl = "https://picsum.photos/200?image=30";
+  bool isLoading = true;
+  bool isError = false;
+
   @override
   void initState() {
     super.initState();
+    fetchImage();
+  }
+
+  Future<void> fetchImage() async {
+    try {
+      final response = await http.get(Uri.parse(imageUrl));
+      if (response.statusCode == 200) {
+        setState(() {
+          imageUrl = response.body;
+          isLoading = false;
+          isError = false;
+        });
+      } else {
+        setState(() {
+          isLoading = false;
+          isError = true;
+        });
+      }
+    } catch (e) {
+      setState(() {
+        isLoading = false;
+        isError = true;
+      });
+    }
   }
 }
