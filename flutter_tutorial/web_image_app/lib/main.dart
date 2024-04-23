@@ -60,4 +60,25 @@ class ImageyHomePageState extends State<ImageHomePage> {
       });
     }
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Image Viewer"),
+      ),
+      body: Center(
+        child: isLoading
+            ? const CircularProgressIndicator()
+            : isError
+                ? const Text("Error loading image")
+                : Image.network(
+                    imageUrl,
+                    width: 300,
+                    height: 300,
+                    fit: BoxFit.cover,
+                  ),
+      ),
+    );
+  }
 }
