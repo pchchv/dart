@@ -85,6 +85,25 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+  fonts:
+    - family: JetBrainsMono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-Bold.ttf
+        - asset: assets/fonts/JetBrainsMono-BoldItalic.ttf
+        - asset: assets/fonts/JetBrainsMono-ExtraBold.ttf
+        - asset: assets/fonts/JetBrainsMono-ExtraBoldItalic.ttf
+        - asset: assets/fonts/JetBrainsMono-ExtraLight.ttf
+        - asset: assets/fonts/JetBrainsMono-ExtraLightItalic.ttf
+        - asset: assets/fonts/JetBrainsMono-Light.ttf
+        - asset: assets/fonts/JetBrainsMono-LightItalic.ttf
+        - asset: assets/fonts/JetBrainsMono-Italic.ttf
+        - asset: assets/fonts/JetBrainsMono-Medium.ttf
+        - asset: assets/fonts/JetBrainsMono-MediumItalic.ttf
+        - asset: assets/fonts/JetBrainsMono-Regular.ttf
+        - asset: assets/fonts/JetBrainsMono-SemiBold.ttf
+        - asset: assets/fonts/JetBrainsMono-SemiBoldItalic.ttf
+        - asset: assets/fonts/JetBrainsMono-Thin.ttf
+        - asset: assets/fonts/JetBrainsMono-ThinItalic.ttf
+          style: italic
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
