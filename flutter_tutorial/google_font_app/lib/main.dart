@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const FontPickerApp());
+}
+
+class FontPickerApp extends StatefulWidget {
+  const FontPickerApp({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _FontPickerAppState createState() => _FontPickerAppState();
 }
 
 class _FontPickerAppState extends State<FontPickerApp> {
