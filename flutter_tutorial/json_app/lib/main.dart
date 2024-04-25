@@ -45,4 +45,26 @@ class _JsonReaderState extends State<JsonReader> {
       _data = json.decode(jsonString);
     });
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("JSON Reader"),
+      ),
+      body: _data.isEmpty
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: _data.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text("Title: ${_data[index]["text"]}"),
+                  subtitle: Text("Description: ${_data[index]["from"]}"),
+                );
+              },
+            ),
+    );
+  }
 }
