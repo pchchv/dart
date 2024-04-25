@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const JSONReaderApp());
+}
 
 class JSONReaderApp extends StatelessWidget {
   const JSONReaderApp({super.key});
