@@ -14,7 +14,20 @@ class JSONApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      )
+      ),
+      home: const JsonReader(),
     );
   }
+}
+
+class JsonReader extends StatefulWidget {
+  const JsonReader({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _JsonReaderState createState() => _JsonReaderState();
+}
+
+class _JsonReaderState extends State<JsonReader> {
+  List<dynamic> _data = [];
 }
