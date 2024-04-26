@@ -42,4 +42,9 @@ class _QuotesScreenState extends State {
       _quotes = prefs.getStringList('quotes') ?? [];
     });
   }
+
+  Future<void> _saveQuotes() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList('quotes', _quotes);
+  }
 }
