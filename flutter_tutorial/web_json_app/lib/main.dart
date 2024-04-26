@@ -39,4 +39,22 @@ class _JsonListViewScreenState extends State {
     super.initState();
     fetchData();
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("JSON ListView"),
+      ),
+      body: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(data[index]["text"]),
+            subtitle: Text(data[index]["from"]),
+          );
+        },
+      ),
+    );
+  }
 }
