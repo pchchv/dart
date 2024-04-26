@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const QuotesApp());
@@ -46,5 +47,19 @@ class _QuotesScreenState extends State {
   Future<void> _saveQuotes() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setStringList('quotes', _quotes);
+  }
+
+  void _addQuote(String quote) {
+    setState(() {
+      _quotes.add(quote);
+      _saveQuotes();
+    });
+  }
+
+  void _deleteQuote(int index) {
+    setState(() {
+      _quotes.removeAt(index);
+      _saveQuotes();
+    });
   }
 }
