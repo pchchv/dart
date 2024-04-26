@@ -28,9 +28,18 @@ class QuotesScreen extends StatefulWidget {
 }
 
 class _QuotesScreenState extends State {
+  List<String> _quotes = [];
 
   @override
   void initState() {
     super.initState();
+    _loadQuotes();
+  }
+
+  Future<void> _loadQuotes() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _quotes = prefs.getStringList('quotes') ?? [];
+    });
   }
 }
