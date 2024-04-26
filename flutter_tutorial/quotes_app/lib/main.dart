@@ -17,3 +17,11 @@ class QuotesApp extends StatelessWidget {
     );
   }
 }
+
+class _QuotesScreenState extends State {
+
+  @override
+  void initState() {
+    super.initState();
+  }
+}
