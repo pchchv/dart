@@ -13,8 +13,14 @@ class JSONReaderApp extends StatelessWidget {
       title: "JSON Reader",
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       )
     );
+  }
+}
+
+class _JsonListViewScreenState extends State {
+  @override
+  void initState() {
+    super.initState();
   }
 }
