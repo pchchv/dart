@@ -15,9 +15,18 @@ class JSONReaderApp extends StatelessWidget {
       title: "JSON Reader",
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
-      )
+      ),
+      home: const JsonListViewScreen(),
     );
   }
+}
+
+class JsonListViewScreen extends StatefulWidget {
+  const JsonListViewScreen({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _JsonListViewScreenState createState() => _JsonListViewScreenState();
 }
 
 class _JsonListViewScreenState extends State {
