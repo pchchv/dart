@@ -29,6 +29,7 @@ class QuotesScreen extends StatefulWidget {
 }
 
 class _QuotesScreenState extends State {
+  final TextEditingController _quoteController = TextEditingController();
   List<String> _quotes = [];
 
   @override
@@ -61,5 +62,62 @@ class _QuotesScreenState extends State {
       _quotes.removeAt(index);
       _saveQuotes();
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Quotes'),
+      ),
+      body: ListView.builder(
+        itemCount: _quotes.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(_quotes[index]),
+            trailing: IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () => _deleteQuote(index),
+            ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Add Quote'),
+                content: TextField(
+                  controller: _quoteController,
+                  decoration: const InputDecoration(labelText: 'Enter a quote'),
+                ),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Cancel'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      String quote = _quoteController.text;
+                      if (quote.isNotEmpty) {
+                        _addQuote(quote);
+                        _quoteController.clear();
+                      }
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Add'),
+                  ),
+                ],
+              );
+            },
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
   }
 }
