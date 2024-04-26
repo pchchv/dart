@@ -13,9 +13,18 @@ class QuotesApp extends StatelessWidget {
       title: 'Quotes App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      )
+      ),
+      home: const QuotesScreen(),
     );
   }
+}
+
+class QuotesScreen extends StatefulWidget {
+  const QuotesScreen({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _QuotesScreenState createState() => _QuotesScreenState();
 }
 
 class _QuotesScreenState extends State {
