@@ -1,16 +1,4 @@
 # slect_assets_app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Challenge from [Flutter Tutorial](https://flutter-tutorial.net/working-with-assets/questions-for-practice-3/):
+9. In a Flutter app, create a feature to switch between two sets of assets (like images and fonts) based on user selection or a toggle switch.
