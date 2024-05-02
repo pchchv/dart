@@ -8,10 +8,10 @@ class ImagesApp extends StatelessWidget {
   ImagesApp({super.key});
 
   final List<String> localImages = [
-    "assets/image1.jpg",
-    "assets/image2.jpg",
-    "assets/image3.jpg",
-    "assets/image4.jpg",
+    "assets/images/image1.jpg",
+    "assets/images/image2.jpg",
+    "assets/images/image3.jpg",
+    "assets/images/image4.jpg",
   ];
 
   final List<String> networkImages = [
