@@ -59,8 +59,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets_set1/
-    - assets_set2/
+    - assets/assets_set1/
+    - assets/assets_set2/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
