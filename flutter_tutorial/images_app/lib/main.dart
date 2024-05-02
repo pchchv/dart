@@ -28,6 +28,28 @@ class ImagesApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Image Grid"),
         ),
+        body: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          itemCount: localImages.length + networkImages.length,
+          itemBuilder: (context, index) {
+            if (index < localImages.length) {
+              return Image.asset(
+                localImages[index],
+                fit: BoxFit.cover,
+              );
+            } else {
+              int networkIndex = index - localImages.length;
+              return Image.network(
+                networkImages[networkIndex],
+                fit: BoxFit.cover,
+              );
+            }
+          },
+        ),
       ),
     );
   }
