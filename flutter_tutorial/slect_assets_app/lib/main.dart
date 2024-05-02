@@ -43,7 +43,7 @@ class _SelectsAssetsAppState extends State<SelectsAssetsApp> {
             ),
             const SizedBox(height: 20),
             Image.asset(
-              useSet1 ? 'assets_set1/image1.jpg' : 'assets_set2/image2.jpg',
+              useSet1 ? 'assets_set1/image1.png' : 'assets_set2/image2.png',
               width: 200,
               height: 200,
             ),
