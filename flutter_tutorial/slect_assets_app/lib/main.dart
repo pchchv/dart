@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const SelectsAssetsApp());
+}
 
 class SelectsAssetsApp extends StatefulWidget {
   const SelectsAssetsApp({super.key});
