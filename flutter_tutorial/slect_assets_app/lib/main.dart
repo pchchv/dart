@@ -20,4 +20,43 @@ class _SelectsAssetsAppState extends State<SelectsAssetsApp> {
       useSet1 = !useSet1;
     });
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Asset Switcher'),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Switch(
+              value: useSet1,
+              onChanged: (newValue) {
+                _toggleAssets();
+              },
+            ),
+            Text(
+              'Use Set ${useSet1 ? '1' : '2'}',
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 20),
+            Image.asset(
+              useSet1 ? 'assets_set1/image1.jpg' : 'assets_set2/image2.jpg',
+              width: 200,
+              height: 200,
+            ),
+            Text(
+              useSet1 ? 'Font from Set 1' : 'Font from Set 2',
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: useSet1 ? 'Font1' : 'Font2',
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
