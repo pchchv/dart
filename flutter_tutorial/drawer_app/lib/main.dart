@@ -14,6 +14,11 @@ class AccountingApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Accounting App'),
         ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+          ),
+        ),
         body: const Center(
           child: Text('Welcome to Accounting App!'),
         ),
