@@ -17,6 +17,20 @@ class AccountingApp extends StatelessWidget {
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
+            children: const <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text(
+                  'Menu',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
         body: const Center(
