@@ -20,4 +20,13 @@ class AccountingApp extends StatelessWidget {
 
 class AccountingHomePage extends StatelessWidget {
   const AccountingHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Accounting App'),
+      ),
+    );
+  }
 }
