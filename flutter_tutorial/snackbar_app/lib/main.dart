@@ -12,7 +12,12 @@ class AccountingApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      )
+      ),
+      home: const AccountingHomePage(),
     );
   }
+}
+
+class AccountingHomePage extends StatelessWidget {
+  const AccountingHomePage({super.key});
 }
