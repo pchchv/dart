@@ -27,6 +27,20 @@ class AccountingHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Accounting App'),
       ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Account created successfully'),
+                  backgroundColor: Colors.green,
+                  duration: Duration(seconds: 5),
+                ),
+              );
+            },
+          child: const Text('Register'),
+        ),
+      ),
     );
   }
 }
