@@ -17,8 +17,8 @@ class AccountingApp extends StatelessWidget {
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
-            children: const <Widget>[
-              DrawerHeader(
+            children: <Widget>[
+              const DrawerHeader(
                 decoration: BoxDecoration(
                   color: Colors.blue,
                 ),
@@ -29,6 +29,31 @@ class AccountingApp extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
+              ),
+              ListTile(
+                title: const Text('Dashboard'),
+                onTap: () {
+                },
+              ),
+              ListTile(
+                title: const Text('Invoices'),
+                onTap: () {
+                },
+              ),
+              ListTile(
+                title: const Text('Payments'),
+                onTap: () {
+                },
+              ),
+              ListTile(
+                title: const Text('Expenses'),
+                onTap: () {
+                },
+              ),
+              ListTile(
+                title: const Text('Settings'),
+                onTap: () {
+                },
               ),
             ],
           ),
