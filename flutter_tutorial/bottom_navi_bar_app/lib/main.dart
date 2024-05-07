@@ -28,6 +28,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text('Home Page'),
+    Text('Workouts Page'),
+    Text('Profile Page'),
+    Text('Settings Page'),
+  ];
 
   @override
   Widget build(BuildContext context) {
