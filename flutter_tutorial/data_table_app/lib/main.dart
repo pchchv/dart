@@ -38,4 +38,27 @@ class ProductDataTable extends StatelessWidget {
     Product(name: 'Product D', price: 25.0, stock: 20),
     Product(name: 'Product E', price: 30.0, stock: 15),
   ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: DataTable(
+        columns: const [
+          DataColumn(label: Text('Name')),
+          DataColumn(label: Text('Price')),
+          DataColumn(label: Text('Stock')),
+        ],
+        rows: products
+            .map(
+              (product) => DataRow(cells: [
+                DataCell(Text(product.name)),
+                DataCell(Text(product.price.toString())),
+                DataCell(Text(product.stock.toString())),
+              ]),
+            )
+            .toList(),
+      ),
+    );
+  }
 }
