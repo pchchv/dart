@@ -29,4 +29,13 @@ class Product {
 }
 
 class ProductDataTable extends StatelessWidget {
+  ProductDataTable({super.key});
+
+  final List<Product> products = [
+    Product(name: 'Product A', price: 10.0, stock: 50),
+    Product(name: 'Product B', price: 20.0, stock: 30),
+    Product(name: 'Product C', price: 15.0, stock: 25),
+    Product(name: 'Product D', price: 25.0, stock: 20),
+    Product(name: 'Product E', price: 30.0, stock: 15),
+  ];
 }
