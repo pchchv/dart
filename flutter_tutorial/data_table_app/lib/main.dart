@@ -13,7 +13,8 @@ class DataApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Product DataTable'),
-        )
+        ),
+        body: ProductDataTable(),
       ),
     );
   }
@@ -25,4 +26,7 @@ class Product {
   final int stock;
 
   Product({required this.name, required this.price, required this.stock});
+}
+
+class ProductDataTable extends StatelessWidget {
 }
