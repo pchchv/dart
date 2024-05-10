@@ -24,10 +24,8 @@ class ContactCustomForm extends StatefulWidget {
   const ContactCustomForm({super.key});
   
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
+  // ignore: library_private_types_in_public_api
+  _ContactCustomFormState createState() => _ContactCustomFormState();
 }
 
 class _ContactCustomFormState extends State<ContactCustomForm> {
