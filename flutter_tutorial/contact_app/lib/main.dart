@@ -14,7 +14,18 @@ class ContactApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      )
+      ),
+      home: const ContactCustomForm(),
     );
+  }
+}
+
+class ContactCustomForm extends StatefulWidget {
+  const ContactCustomForm({super.key});
+  
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }
