@@ -95,8 +95,11 @@ class _ContactCustomFormState extends State<ContactCustomForm> {
               MaterialButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    // ignore: avoid_print
                     print('Name: ${_nameController.text}');
+                    // ignore: avoid_print
                     print('Email: ${_emailController.text}');
+                    // ignore: avoid_print
                     print('Phone Number: ${_phoneController.text}');
                   }
                 },
