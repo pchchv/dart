@@ -29,3 +29,10 @@ class ContactCustomForm extends StatefulWidget {
     throw UnimplementedError();
   }
 }
+
+class _ContactCustomFormState extends State<ContactCustomForm> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+}
