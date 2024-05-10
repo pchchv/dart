@@ -77,6 +77,21 @@ class _ContactCustomFormState extends State<ContactCustomForm> {
                 },
               ),
               const SizedBox(height: 20),
+              TextFormField(
+                controller: _phoneController,
+                decoration: const InputDecoration(
+                  labelText: 'Phone Number',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.phone),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter your phone number';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
