@@ -92,6 +92,16 @@ class _ContactCustomFormState extends State<ContactCustomForm> {
                 },
               ),
               const SizedBox(height: 20),
+              MaterialButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    print('Name: ${_nameController.text}');
+                    print('Email: ${_emailController.text}');
+                    print('Phone Number: ${_phoneController.text}');
+                  }
+                },
+                child: const Text('Submit'),
+              ),
             ],
           ),
         ),
