@@ -33,4 +33,13 @@ class _ContactCustomFormState extends State<ContactCustomForm> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Custom Form'),
+      ),
+    );
+  }
 }
