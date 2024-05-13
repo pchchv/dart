@@ -24,4 +24,6 @@ class ProductsApp extends StatelessWidget {
       ),
     );
   }
+
+class _ProductTablePageState extends State<ProductTablePage> {
 }
