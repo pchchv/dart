@@ -7,6 +7,11 @@ class Product {
 
   Product({required this.name, required this.price, required this.quantity});
 }
+
+void main() {
+  runApp(const ProductsApp());
+}
+
 class ProductsApp extends StatelessWidget {
   const ProductsApp({super.key});
 
