@@ -39,6 +39,12 @@ class ButtonScreen extends StatelessWidget {
               child: const Text('Filled Button'),
             ),
             const SizedBox(height: 20),
+            IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () {},
+              tooltip: 'Icon Button',
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
