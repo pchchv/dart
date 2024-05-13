@@ -80,4 +80,17 @@ class _ProductTablePageState extends State<ProductTablePage> {
       ),
     );
   }
+
+  int _sortColumnIndex() {
+    switch (_sortColumn) {
+      case 'name':
+        return 0;
+      case 'price':
+        return 1;
+      case 'quantity':
+        return 2;
+      default:
+        return 0;
+    }
+  }
 }
