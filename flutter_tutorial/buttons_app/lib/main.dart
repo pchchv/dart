@@ -26,7 +26,7 @@ class ButtonScreen extends StatelessWidget {
         title: const Text('Button Demo'),
       ),
       body: Center(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
