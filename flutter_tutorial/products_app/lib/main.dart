@@ -36,6 +36,12 @@ class ProductTablePage extends StatefulWidget {
 }
 
 class _ProductTablePageState extends State<ProductTablePage> {
+  final List<Product> _products = [
+    Product(name: 'Product A', price: 15.55, quantity: 5),
+    Product(name: 'Product B', price: 15.00, quantity: 3),
+    Product(name: 'Product C', price: 20.00, quantity: 7),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
