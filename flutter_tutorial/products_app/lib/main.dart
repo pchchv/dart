@@ -78,6 +78,43 @@ class _ProductTablePageState extends State<ProductTablePage> {
       appBar: AppBar(
         title: const Text('Product Table'),
       ),
+      body: SingleChildScrollView(
+        child: DataTable(
+          sortAscending: _sortAscending,
+          sortColumnIndex: _sortColumnIndex(),
+          columns: [
+            DataColumn(
+              label: const Text('Product Name'),
+              onSort: (columnIndex, ascending) {
+                _sort('name');
+              },
+            ),
+            DataColumn(
+              label: const Text('Price'),
+              onSort: (columnIndex, ascending) {
+                _sort('price');
+              },
+            ),
+            DataColumn(
+              label: const Text('Quantity'),
+              onSort: (columnIndex, ascending) {
+                _sort('quantity');
+              },
+            ),
+          ],
+          rows: _products
+              .map(
+                (product) => DataRow(
+                  cells: [
+                    DataCell(Text(product.name)),
+                    DataCell(Text('\$${product.price.toStringAsFixed(2)}')),
+                    DataCell(Text(product.quantity.toString())),
+                  ],
+                ),
+              )
+              .toList(),
+        ),
+      ),
     );
   }
 
