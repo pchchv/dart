@@ -36,4 +36,12 @@ class ProductTablePage extends StatefulWidget {
 }
 
 class _ProductTablePageState extends State<ProductTablePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Product Table'),
+      ),
+    );
+  }
 }
