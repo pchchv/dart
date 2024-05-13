@@ -25,6 +25,18 @@ class ButtonScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Button Demo'),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Elevated Button'),
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
+      ),
     );
   }
 }
