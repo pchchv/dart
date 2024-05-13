@@ -22,8 +22,18 @@ class ProductsApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const ProductTablePage(),
     );
   }
+}
+
+class ProductTablePage extends StatefulWidget {
+  const ProductTablePage({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _ProductTablePageState createState() => _ProductTablePageState();
+}
 
 class _ProductTablePageState extends State<ProductTablePage> {
 }
