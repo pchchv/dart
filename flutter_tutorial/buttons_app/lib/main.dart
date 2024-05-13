@@ -34,6 +34,11 @@ class ButtonScreen extends StatelessWidget {
               child: const Text('Elevated Button'),
             ),
             const SizedBox(height: 20),
+            FilledButton(
+              onPressed: () {},
+              child: const Text('Filled Button'),
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
