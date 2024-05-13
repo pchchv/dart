@@ -45,6 +45,12 @@ class ButtonScreen extends StatelessWidget {
               tooltip: 'Icon Button',
             ),
             const SizedBox(height: 20),
+            FloatingActionButton(
+              onPressed: () {},
+              tooltip: 'Floating Action Button',
+              child: const Icon(Icons.add),
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
