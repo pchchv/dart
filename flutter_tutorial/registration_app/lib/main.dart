@@ -28,6 +28,24 @@ class RegistrationForm extends StatefulWidget {
 }
 
 class _RegistrationFormState extends State<RegistrationForm> {
+  final List<Widget> _textFields = [];
+
+  void _addTextField() {
+    setState(() {
+      _textFields.add(
+        TextFormField(
+          decoration: const InputDecoration(labelText: 'Additional Field'),
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter some text';
+            }
+            return null;
+          },
+        ),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
