@@ -29,6 +29,11 @@ class RegistrationForm extends StatefulWidget {
 
 class _RegistrationFormState extends State<RegistrationForm> {
   final List<Widget> _textFields = [];
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
   void _addTextField() {
     setState(() {
@@ -44,6 +49,42 @@ class _RegistrationFormState extends State<RegistrationForm> {
         ),
       );
     });
+  }
+
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      List<String> fieldValues = _textFields
+          .map((textField) => (textField as TextFormField).controller!.text)
+          .toList();
+      // Process the form data
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Form Data'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Username: ${_usernameController.text}'),
+                Text('Password: ${_passwordController.text}'),
+                Text('Confirm Password: ${_confirmPasswordController.text}'),
+                Text('Email: ${_emailController.text}'),
+                Text('Additional Fields: ${fieldValues.join(", ")}'),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Close'),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 
   @override
