@@ -125,6 +125,11 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   children: _textFields,
                 ),
                 ElevatedButton(
+                  onPressed: _addTextField,
+                  child: const Text('Add Additional Field'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
                   onPressed: _submitForm,
                   child: const Text('Submit'),
                 ),
