@@ -135,6 +135,17 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     return null;
                   },
                 ),
+                TextFormField(
+                  controller: _emailController,
+                  decoration: const InputDecoration(labelText: 'Email'),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    return null;
+                  },
+                ),
                 ElevatedButton(
                   onPressed: _addTextField,
                   child: const Text('Add Additional Field'),
