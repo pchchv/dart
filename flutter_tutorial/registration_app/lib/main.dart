@@ -121,8 +121,19 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     return null;
                   },
                 ),
-                Column(
-                  children: _textFields,
+                TextFormField(
+                  controller: _confirmPasswordController,
+                  decoration: const InputDecoration(labelText: 'Confirm Password'),
+                  obscureText: true,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please confirm your password';
+                    }
+                    if (value != _passwordController.text) {
+                      return 'Passwords do not match';
+                    }
+                    return null;
+                  },
                 ),
                 ElevatedButton(
                   onPressed: _addTextField,
@@ -133,6 +144,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   onPressed: _submitForm,
                   child: const Text('Submit'),
                 ),
+                const SizedBox(height: 20),
               ],
             ),
           ),
