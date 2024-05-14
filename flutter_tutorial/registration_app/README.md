@@ -1,16 +1,4 @@
 # registration_app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Practice from [Flutter Tutorial](https://flutter-tutorial.net/useful-widgets/questions-for-practice-4/):
+Design a form with validation that includes fields for user registration: username, password, confirm password, and email. Display appropriate error messages for invalid inputs. Construct a dynamic form in Flutter that adds a new text field every time the user presses an ‘Add’ button. Include a ‘Submit’ button to display all entered data in a dialog box.
