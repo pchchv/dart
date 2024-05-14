@@ -13,7 +13,12 @@ class RegistrationApp extends StatelessWidget {
       title: 'Dynamic Form',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      )
+      ),
+      home: const RegistrationForm(),
     );
   }
+}
+
+class RegistrationForm extends StatefulWidget {
+  const RegistrationForm({super.key});
 }
