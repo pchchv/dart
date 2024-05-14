@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+void main() {
+  runApp(const RegistrationApp());
+}
 
 class RegistrationApp extends StatelessWidget {
   const RegistrationApp({super.key});
