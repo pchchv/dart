@@ -21,4 +21,19 @@ class RegistrationApp extends StatelessWidget {
 
 class RegistrationForm extends StatefulWidget {
   const RegistrationForm({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _RegistrationFormState createState() => _RegistrationFormState();
+}
+
+class _RegistrationFormState extends State<RegistrationForm> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('User Registration Form'),
+      ),
+    );
+  }
 }
