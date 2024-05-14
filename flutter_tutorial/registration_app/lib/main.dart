@@ -121,6 +121,13 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     return null;
                   },
                 ),
+                Column(
+                  children: _textFields,
+                ),
+                ElevatedButton(
+                  onPressed: _submitForm,
+                  child: const Text('Submit'),
+                ),
               ],
             ),
           ),
