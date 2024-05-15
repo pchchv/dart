@@ -14,6 +14,11 @@ class MultiStepApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const MultiStepForm(),
     );
   }
+}
+
+class MultiStepForm extends StatefulWidget {
+  const MultiStepForm({super.key});
 }
