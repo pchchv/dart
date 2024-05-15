@@ -28,6 +28,10 @@ class ResponsiveLayout extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Responsive Layout Example'),
       ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+        },
+      ),
     );
   }
 }
