@@ -21,4 +21,11 @@ class MultiStepApp extends StatelessWidget {
 
 class MultiStepForm extends StatefulWidget {
   const MultiStepForm({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _MultiStepFormState createState() => _MultiStepFormState();
+}
+
+class _MultiStepFormState extends State<MultiStepForm> {
 }
