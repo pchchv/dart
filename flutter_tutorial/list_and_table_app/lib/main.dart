@@ -30,6 +30,31 @@ class ResponsiveLayout extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
+          // Display a table on larger screens
+          return DataTable(
+            columns: const [
+              DataColumn(label: Text('ID')),
+              DataColumn(label: Text('Name')),
+              DataColumn(label: Text('Age')),
+            ],
+            rows: const [
+              DataRow(cells: [
+                DataCell(Text('1')),
+                DataCell(Text('John')),
+                DataCell(Text('30')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('2')),
+                DataCell(Text('Alice')),
+                DataCell(Text('25')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('3')),
+                DataCell(Text('Bob')),
+                DataCell(Text('40')),
+              ]),
+            ],
+          );
         },
       ),
     );
