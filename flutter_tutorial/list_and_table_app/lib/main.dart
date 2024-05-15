@@ -56,6 +56,21 @@ class ResponsiveLayout extends StatelessWidget {
                 ]),
               ],
             );
+          } else {
+            // Display a list view on smaller screens
+            return ListView(
+              children: const [
+                ListTile(
+                  title: Text('ID: 1, Name: John, Age: 30'),
+                ),
+                ListTile(
+                  title: Text('ID: 2, Name: Alice, Age: 25'),
+                ),
+                ListTile(
+                  title: Text('ID: 3, Name: Bob, Age: 40'),
+                ),
+              ],
+            );
           }
         },
       ),
