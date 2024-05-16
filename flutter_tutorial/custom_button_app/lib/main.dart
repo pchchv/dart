@@ -57,6 +57,28 @@ class _CustomButtonState extends State<CustomButton> {
           _isPressed = false;
         });
       },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        decoration: BoxDecoration(
+          color: _isPressed ? Colors.greenAccent[800] : Colors.greenAccent,
+          borderRadius: BorderRadius.circular(8.0),
+          boxShadow: _isPressed
+              ? [
+                  BoxShadow(
+                    color: Colors.greenAccent.withOpacity(0.5),
+                    blurRadius: 10.0,
+                    spreadRadius: 1.0,
+                  )
+                ]
+              : [
+                  BoxShadow(
+                    color: Colors.greenAccent.withOpacity(0.5),
+                    blurRadius: 5.0,
+                    spreadRadius: 1.0,
+                  )
+                ],
+        ),
+      ),
     );
   }
 }
