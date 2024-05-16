@@ -78,6 +78,15 @@ class _CustomButtonState extends State<CustomButton> {
                   )
                 ],
         ),
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+        child: Text(
+          widget.text,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 16.0,
+          ),
+        ),
       ),
     );
   }
