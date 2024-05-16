@@ -28,6 +28,32 @@ class MultiStepForm extends StatefulWidget {
 }
 
 class _MultiStepFormState extends State<MultiStepForm> {
+  final PageController _pageController = PageController(initialPage: 0);
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  
+  void _submitForm() {
+    // You can perform form validation and submit data here
+    String name = _nameController.text;
+    String email = _emailController.text;
+
+    // For demonstration, just print the data
+    // ignore: avoid_print
+    print('Name: $name');
+    // ignore: avoid_print
+    print('Email: $email');
+
+    // Reset the form after submission
+    _nameController.clear();
+    _emailController.clear();
+
+    // Navigate to the first page after submission
+    _pageController.animateToPage(
+      0,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.ease,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
