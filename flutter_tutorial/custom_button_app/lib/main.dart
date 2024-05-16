@@ -24,3 +24,17 @@ class ButtonApp extends StatelessWidget {
   );
   }
 }
+
+class CustomButton extends StatefulWidget {
+  final String text;
+  final VoidCallback onPressed;
+
+  const CustomButton({super.key, required this.text, required this.onPressed});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _CustomButtonState createState() => _CustomButtonState();
+}
+
+class _CustomButtonState extends State<CustomButton> {
+}
