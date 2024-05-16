@@ -28,6 +28,7 @@ class MultiStepForm extends StatefulWidget {
 }
 
 class _MultiStepFormState extends State<MultiStepForm> {
+  int _currentPage = 0;
   final PageController _pageController = PageController(initialPage: 0);
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -87,6 +88,37 @@ class _MultiStepFormState extends State<MultiStepForm> {
             _currentPage = index;
           });
         },
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            // Previous Button
+            if (_currentPage != 0)
+              TextButton(
+                onPressed: () {
+                  _pageController.previousPage(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.ease);
+                },
+                child: const Text('Previous'),
+              ),
+            // Next Button
+            TextButton(
+              onPressed: () {
+                if (_currentPage == 0) {
+                  _pageController.nextPage(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.ease);
+                } else {
+                  // Submit the form
+                  _submitForm();
+                }
+              },
+              child: Text(_currentPage == 0 ? 'Next' : 'Submit'),
+            ),
+          ],
+        ),
       ),
     );
   }
