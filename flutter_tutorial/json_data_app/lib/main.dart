@@ -21,4 +21,19 @@ class DataApp extends StatelessWidget {
 class UserData extends DataTableSource {
   final List<Map<String, dynamic>> _userData;
   UserData(this._userData);
+
+  @override
+  DataRow? getRow(int index) {
+    if (index >= _userData.length) return null;
+    final user = _userData[index];
+    return DataRow.byIndex(
+      index: index,
+      cells: [
+        DataCell(Text('${user['id']}')),
+        DataCell(Text(user['name'])),
+        DataCell(Text(user['username'])),
+        DataCell(Text(user['email'])),
+      ],
+    );
+  }
 }
