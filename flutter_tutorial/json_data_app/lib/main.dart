@@ -36,4 +36,13 @@ class UserData extends DataTableSource {
       ],
     );
   }
+
+  @override
+  int get rowCount => _userData.length;
+
+  @override
+  bool get isRowCountApproximate => false;
+
+  @override
+  int get selectedRowCount => 0;
 }
