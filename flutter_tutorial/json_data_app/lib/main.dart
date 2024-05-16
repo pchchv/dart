@@ -17,3 +17,8 @@ class DataApp extends StatelessWidget {
     );
   }
 }
+
+class UserData extends DataTableSource {
+  final List<Map<String, dynamic>> _userData;
+  UserData(this._userData);
+}
