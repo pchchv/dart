@@ -64,3 +64,18 @@ class _MultiStepFormState extends State<MultiStepForm> {
     );
   }
 }
+
+class StepPage extends StatelessWidget {
+  final String title;
+  final Widget content;
+  const StepPage({super.key, required this.title, required this.content});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+      ),
+    );
+  }
+}
