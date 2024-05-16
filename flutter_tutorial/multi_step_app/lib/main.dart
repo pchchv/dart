@@ -61,6 +61,33 @@ class _MultiStepFormState extends State<MultiStepForm> {
       appBar: AppBar(
         title: const Text('Multi-step Form'),
       ),
+      body: PageView(
+        controller: _pageController,
+        physics: const NeverScrollableScrollPhysics(),
+        children: [
+          // Step 1: Name
+          StepPage(
+            title: 'Step 1',
+            content: TextField(
+              controller: _nameController,
+              decoration: const InputDecoration(labelText: 'Enter your name'),
+            ),
+          ),
+          // Step 2: Email
+          StepPage(
+            title: 'Step 2',
+            content: TextField(
+              controller: _emailController,
+              decoration: const InputDecoration(labelText: 'Enter your email'),
+            ),
+          ),
+        ],
+        onPageChanged: (int index) {
+          setState(() {
+            _currentPage = index;
+          });
+        },
+      ),
     );
   }
 }
