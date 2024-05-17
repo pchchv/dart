@@ -81,4 +81,48 @@ class _SignInSignUpScreenState extends State<SignInSignUpScreen> {
       ],
     );
   }
+
+  Widget _buildSignUpForm() {
+    return Column(
+      key: const ValueKey('signUp'),
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Sign Up',
+          style: TextStyle(fontSize: 24),
+        ),
+        const SizedBox(height: 20),
+        const TextField(
+          decoration: InputDecoration(
+            labelText: 'Email',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: 20),
+        const TextField(
+          decoration: InputDecoration(
+            labelText: 'Username',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: 20),
+        const TextField(
+          obscureText: true,
+          decoration: InputDecoration(
+            labelText: 'Password',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text('Sign Up'),
+        ),
+        TextButton(
+          onPressed: _toggleForm,
+          child: const Text('Already have an account? Sign In'),
+        ),
+      ],
+    );
+  }
 }
