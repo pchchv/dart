@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  runApp(const SignApp());
 }
 
 class SignApp extends StatelessWidget {
