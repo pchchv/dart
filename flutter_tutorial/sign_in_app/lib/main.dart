@@ -20,3 +20,12 @@ class SignApp extends StatelessWidget {
 
 class SignInSignUpScreen extends StatefulWidget {
 }
+
+class _SignInSignUpScreenState extends State<SignInSignUpScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Sign In / Sign Up'),
+      ),
+}
