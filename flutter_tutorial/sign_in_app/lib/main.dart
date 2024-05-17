@@ -34,4 +34,6 @@ class _SignInSignUpScreenState extends State<SignInSignUpScreen> {
       appBar: AppBar(
         title: const Text('Sign In / Sign Up'),
       ),
+    );
+  }
 }
