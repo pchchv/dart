@@ -14,11 +14,17 @@ class SignApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const SignInSignUpScreen(),
     );
   }
 }
 
 class SignInSignUpScreen extends StatefulWidget {
+  const SignInSignUpScreen({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _SignInSignUpScreenState createState() => _SignInSignUpScreenState();
 }
 
 class _SignInSignUpScreenState extends State<SignInSignUpScreen> {
