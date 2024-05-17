@@ -28,6 +28,14 @@ class SignInSignUpScreen extends StatefulWidget {
 }
 
 class _SignInSignUpScreenState extends State<SignInSignUpScreen> {
+  bool _isSignIn = true;
+
+  void _toggleForm() {
+    setState(() {
+      _isSignIn = !_isSignIn;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
