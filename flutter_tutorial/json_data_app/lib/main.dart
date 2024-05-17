@@ -14,11 +14,17 @@ class DataApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const UserDataTable(),
     );
   }
 }
 
 class UserDataTable extends StatefulWidget {
+  const UserDataTable({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _UserDataTableState createState() => _UserDataTableState();
 }
 
 class _UserDataTableState extends State<UserDataTable> {
