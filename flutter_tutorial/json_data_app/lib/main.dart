@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const DataApp());
@@ -28,6 +30,23 @@ class UserDataTable extends StatefulWidget {
 }
 
 class _UserDataTableState extends State<UserDataTable> {
+  List<Map<String, dynamic>> _userData = [];
+
+  Future<void> _fetchUserData() async {
+    // Mock API URL
+    String apiUrl = "https://jsonplaceholder.typicode.com/users";
+    
+    // Fetch data
+    final response = await http.get(Uri.parse(apiUrl));
+    if (response.statusCode == 200) {
+      final List<dynamic> jsonData = json.decode(response.body);
+      setState(() {
+        _userData = jsonData.cast<Map<String, dynamic>>();
+      });
+    } else {
+      throw Exception('Failed to load user data');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
