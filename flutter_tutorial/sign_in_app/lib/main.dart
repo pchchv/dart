@@ -42,6 +42,15 @@ class _SignInSignUpScreenState extends State<SignInSignUpScreen> {
       appBar: AppBar(
         title: const Text('Sign In / Sign Up'),
       ),
+      body: Center(
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 500),
+          transitionBuilder: (Widget child, Animation<double> animation) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          child: _isSignIn ? _buildSignInForm() : _buildSignUpForm(),
+        ),
+      ),
     );
   }
 
