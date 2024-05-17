@@ -18,6 +18,21 @@ class DataApp extends StatelessWidget {
   }
 }
 
+class UserDataTable extends StatefulWidget {
+}
+
+class _UserDataTableState extends State<UserDataTable> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('User Data Table'),
+      ),
+    );
+  }
+}
+
 class UserData extends DataTableSource {
   final List<Map<String, dynamic>> _userData;
   UserData(this._userData);
