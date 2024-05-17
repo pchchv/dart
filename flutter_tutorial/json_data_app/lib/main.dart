@@ -32,6 +32,12 @@ class UserDataTable extends StatefulWidget {
 class _UserDataTableState extends State<UserDataTable> {
   List<Map<String, dynamic>> _userData = [];
 
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserData();
+  }
+
   Future<void> _fetchUserData() async {
     // Mock API URL
     String apiUrl = "https://jsonplaceholder.typicode.com/users";
