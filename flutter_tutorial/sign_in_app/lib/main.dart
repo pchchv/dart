@@ -17,3 +17,6 @@ class SignApp extends StatelessWidget {
     );
   }
 }
+
+class SignInSignUpScreen extends StatefulWidget {
+}
