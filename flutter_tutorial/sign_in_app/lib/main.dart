@@ -44,4 +44,41 @@ class _SignInSignUpScreenState extends State<SignInSignUpScreen> {
       ),
     );
   }
+
+  Widget _buildSignInForm() {
+    return Column(
+      key: const ValueKey('signIn'),
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Sign In',
+          style: TextStyle(fontSize: 24),
+        ),
+        const SizedBox(height: 20),
+        const TextField(
+          decoration: InputDecoration(
+            labelText: 'Email',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: 20),
+        const TextField(
+          obscureText: true,
+          decoration: InputDecoration(
+            labelText: 'Password',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text('Sign In'),
+        ),
+        TextButton(
+          onPressed: _toggleForm,
+          child: const Text('Don\'t have an account? Sign Up'),
+        ),
+      ],
+    );
+  }
 }
