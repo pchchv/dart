@@ -31,6 +31,10 @@ class UserDataTable extends StatefulWidget {
 
 class _UserDataTableState extends State<UserDataTable> {
   List<Map<String, dynamic>> _userData = [];
+  // ignore: prefer_final_fields
+  int _rowsPerPage = 10;
+  // ignore: unused_field
+  int _currentPage = 0;
 
   @override
   void initState() {
@@ -59,6 +63,24 @@ class _UserDataTableState extends State<UserDataTable> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('User Data Table'),
+      ),
+      body: SingleChildScrollView(
+        child: PaginatedDataTable(
+          header: const Text('User Data'),
+          rowsPerPage: _rowsPerPage,
+          onPageChanged: (int page) {
+            setState(() {
+              _currentPage = page;
+            });
+          },
+          source: UserData(_userData),
+          columns: const [
+            DataColumn(label: Text('ID')),
+            DataColumn(label: Text('Name')),
+            DataColumn(label: Text('Username')),
+            DataColumn(label: Text('Email')),
+          ],
+        ),
       ),
     );
   }
