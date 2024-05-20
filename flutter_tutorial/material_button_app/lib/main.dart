@@ -32,6 +32,10 @@ class ButtonHomePage extends StatelessWidget {
         child: MaterialButton(
           color: Colors.red,
           textColor: Colors.white,
+          onPressed: () {
+            const snackBar = SnackBar(content: Text('Button Pressed'));
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          },
           child: const Text('Click Me'),
         ),
       ),
