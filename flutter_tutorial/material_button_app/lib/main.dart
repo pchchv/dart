@@ -13,6 +13,20 @@ class ButtonApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const ButtonHomePage(),
+    );
+  }
+}
+
+class ButtonHomePage extends StatelessWidget {
+  const ButtonHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Simple Button App'),
+      ),
     );
   }
 }
