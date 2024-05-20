@@ -28,6 +28,13 @@ class ButtonHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Simple Button App'),
       ),
+      body: Center(
+        child: MaterialButton(
+          color: Colors.red,
+          textColor: Colors.white,
+          child: const Text('Click Me'),
+        ),
+      ),
     );
   }
 }
