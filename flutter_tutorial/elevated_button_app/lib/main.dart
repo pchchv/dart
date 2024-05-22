@@ -21,3 +21,6 @@ class ButtonApp extends StatelessWidget {
 class ButtonHomePage extends StatefulWidget {
   const ButtonHomePage({super.key});
 }
+
+class _ButtonHomePageState extends State<ButtonHomePage> {
+}
