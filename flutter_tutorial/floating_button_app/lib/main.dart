@@ -28,4 +28,13 @@ class ButtonHomePage extends StatefulWidget {
 }
 
 class _ButtonHomePageState extends State<ButtonHomePage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Floating Action Button Color Change'),
+      ),
+    );
+  }
 }
