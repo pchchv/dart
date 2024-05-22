@@ -45,6 +45,11 @@ class _ButtonHomePageState extends State<ButtonHomePage> {
       body: const Center(
         child: Text('Press the button to change its color'),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _toggleColor,
+        backgroundColor: _isGreen ? Colors.green : Colors.red,
+        child: const Icon(Icons.color_lens),
+      ),
     );
   }
 }
