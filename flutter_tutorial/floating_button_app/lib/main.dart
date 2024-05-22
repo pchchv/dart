@@ -28,6 +28,13 @@ class ButtonHomePage extends StatefulWidget {
 }
 
 class _ButtonHomePageState extends State<ButtonHomePage> {
+  bool _isGreen = true;
+
+  void _toggleColor() {
+    setState(() {
+      _isGreen = !_isGreen;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
