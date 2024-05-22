@@ -28,4 +28,12 @@ class ButtonHomePage extends StatefulWidget {
 }
 
 class _ButtonHomePageState extends State<ButtonHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Button Text Change App'),
+      ),
+    );
+  }
 }
