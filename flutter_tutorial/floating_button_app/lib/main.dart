@@ -42,6 +42,9 @@ class _ButtonHomePageState extends State<ButtonHomePage> {
       appBar: AppBar(
         title: const Text('Floating Action Button Color Change'),
       ),
+      body: const Center(
+        child: Text('Press the button to change its color'),
+      ),
     );
   }
 }
