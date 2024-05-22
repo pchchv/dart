@@ -44,6 +44,12 @@ class _ButtonHomePageState extends State<ButtonHomePage> {
       appBar: AppBar(
         title: const Text('Button Text Change App'),
       ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: _changeButtonText,
+          child: Text(buttonText),
+        ),
+      ),
     );
   }
 }
