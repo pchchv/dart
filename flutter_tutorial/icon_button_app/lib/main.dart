@@ -43,8 +43,8 @@ class _ColorChangingIconButtonState extends State<ColorChangingIconButton> {
   Widget build(BuildContext context) {
     return IconButton(
       icon: const Icon(Icons.favorite),
-      color: Colors.red,
-      onPressed: () {},
+      color: _isPressed ? Colors.red : Colors.grey,
+      onPressed: (_toggleColor),
     );
   }
 }
