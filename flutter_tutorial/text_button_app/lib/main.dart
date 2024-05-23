@@ -42,7 +42,10 @@ class _ColorChangingTextButtonState extends State<ColorChangingTextButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: _toggleTextColor,
+      style: TextButton.styleFrom(
+        foregroundColor: _isPressed ? Colors.red : Colors.blue,
+      ),
       child: const Text('Press Me'),
     );
   }
