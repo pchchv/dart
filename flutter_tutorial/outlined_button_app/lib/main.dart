@@ -31,10 +31,18 @@ class ColorChangingOutlinedButton extends StatefulWidget {
 }
 
 class _ColorChangingOutlinedButtonState extends State<ColorChangingOutlinedButton> {
+  bool _isPressed = false;
+
+  void _toggleBorderColor() {
+    setState(() {
+      _isPressed = !_isPressed;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: _toggleBorderColor,
       style: OutlinedButton.styleFrom(
         side: const BorderSide(color: Colors.blue),
       ),
