@@ -31,6 +31,14 @@ class ColorChangingTextButton extends StatefulWidget {
 }
 
 class _ColorChangingTextButtonState extends State<ColorChangingTextButton> {
+  bool _isPressed = false;
+
+  void _toggleTextColor() {
+    setState(() {
+      _isPressed = !_isPressed;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
