@@ -44,7 +44,7 @@ class _ColorChangingOutlinedButtonState extends State<ColorChangingOutlinedButto
     return OutlinedButton(
       onPressed: _toggleBorderColor,
       style: OutlinedButton.styleFrom(
-        side: const BorderSide(color: Colors.blue),
+        side: BorderSide(color: _isPressed ? Colors.green : Colors.blue),
       ),
       child: const Text('Press Me'),
     );
