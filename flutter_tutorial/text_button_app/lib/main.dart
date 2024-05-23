@@ -33,5 +33,9 @@ class ColorChangingTextButton extends StatefulWidget {
 class _ColorChangingTextButtonState extends State<ColorChangingTextButton> {
   @override
   Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {},
+      child: const Text('Press Me'),
+    );
   }
 }
