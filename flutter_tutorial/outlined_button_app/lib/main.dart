@@ -33,5 +33,12 @@ class ColorChangingOutlinedButton extends StatefulWidget {
 class _ColorChangingOutlinedButtonState extends State<ColorChangingOutlinedButton> {
   @override
   Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: () {},
+      style: OutlinedButton.styleFrom(
+        side: const BorderSide(color: Colors.blue),
+      ),
+      child: const Text('Press Me'),
+    );
   }
 }
