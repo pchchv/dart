@@ -31,6 +31,13 @@ class ColorChangingIconButton extends StatefulWidget {
 }
 
 class _ColorChangingIconButtonState extends State<ColorChangingIconButton> {
+  bool _isPressed = false;
+
+  void _toggleColor() {
+    setState(() {
+      _isPressed = !_isPressed;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
