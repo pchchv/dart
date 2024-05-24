@@ -51,8 +51,22 @@ class _DaySelectorState extends State<DaySelector> {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        DropdownButton<String>(
+          hint: const Text('Select a day'),
+          value: _selectedDay,
+          onChanged: _onDaySelected,
+          items: _daysOfWeek.map((String day) {
+            return DropdownMenuItem<String>(
+              value: day,
+              child: Text(day),
+            );
+          }).toList(),
+        ),
+        const SizedBox(height: 20),
+      ],
     );
   }
 }
