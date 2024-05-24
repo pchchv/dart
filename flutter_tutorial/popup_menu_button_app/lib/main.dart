@@ -23,7 +23,24 @@ class _ButtonAppState extends State<ButtonApp> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return MaterialApp(
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: _themeMode,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Popup Menu Button Theme Change'),
+          actions: <Widget>[
+            ThemePopupMenu(
+              onThemeChanged: _changeTheme,
+            ),
+          ],
+        ),
+        body: const Center(
+          child: Text('Select a theme from the menu'),
+        ),
+      ),
+    );
   }
 }
 
