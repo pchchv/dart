@@ -66,6 +66,10 @@ class _DaySelectorState extends State<DaySelector> {
           }).toList(),
         ),
         const SizedBox(height: 20),
+        Text(
+          _selectedDay == null ? 'No day selected' : 'Selected day: $_selectedDay',
+          style: const TextStyle(fontSize: 20),
+        ),
       ],
     );
   }
