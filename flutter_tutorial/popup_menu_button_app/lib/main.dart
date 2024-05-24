@@ -18,3 +18,14 @@ class _ButtonAppState extends State<ButtonApp> {
     return const MaterialApp();
   }
 }
+
+class ThemePopupMenu extends StatelessWidget {
+  final ValueChanged<ThemeMode> onThemeChanged;
+
+  const ThemePopupMenu({super.key, required this.onThemeChanged});
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton<ThemeMode>(itemBuilder: (BuildContext context) {},);
+  }
+}
