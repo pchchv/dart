@@ -33,6 +33,16 @@ class DaySelector extends StatefulWidget {
 class _DaySelectorState extends State<DaySelector> {
   String? _selectedDay;
 
+  final List<String> _daysOfWeek = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
+
   void _onDaySelected(String? newDay) {
     setState(() {
       _selectedDay = newDay;
