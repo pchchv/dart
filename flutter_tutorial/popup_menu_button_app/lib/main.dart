@@ -26,6 +26,24 @@ class ThemePopupMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton<ThemeMode>(itemBuilder: (BuildContext context) {},);
+    return PopupMenuButton<ThemeMode>(
+      onSelected: (ThemeMode result) {
+        onThemeChanged(result);
+      },
+      itemBuilder: (BuildContext context) => <PopupMenuEntry<ThemeMode>>[
+        const PopupMenuItem<ThemeMode>(
+          value: ThemeMode.light,
+          child: Text('Light'),
+        ),
+        const PopupMenuItem<ThemeMode>(
+          value: ThemeMode.dark,
+          child: Text('Dark'),
+        ),
+        const PopupMenuItem<ThemeMode>(
+          value: ThemeMode.system,
+          child: Text('System Default'),
+        ),
+      ],
+    );
   }
 }
