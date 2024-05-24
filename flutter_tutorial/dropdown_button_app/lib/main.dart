@@ -31,6 +31,14 @@ class DaySelector extends StatefulWidget {
 }
 
 class _DaySelectorState extends State<DaySelector> {
+  String? _selectedDay;
+
+  void _onDaySelected(String? newDay) {
+    setState(() {
+      _selectedDay = newDay;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Column(
