@@ -13,6 +13,14 @@ class ButtonApp extends StatefulWidget {
 }
 
 class _ButtonAppState extends State<ButtonApp> {
+  ThemeMode _themeMode = ThemeMode.system;
+
+  void _changeTheme(ThemeMode themeMode) {
+    setState(() {
+      _themeMode = themeMode;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp();
