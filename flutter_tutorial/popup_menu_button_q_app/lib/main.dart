@@ -41,6 +41,16 @@ class _PopupMenuButtonExampleState extends State<PopupMenuButtonExample> {
 
   @override
   Widget build(BuildContext context) {
-    return ();
+    return PopupMenuButton<String>(
+      onSelected: _handleMenuItemClick,
+      itemBuilder: (BuildContext context) {
+        return {'Option 1', 'Option 2', 'Option 3'}.map((String choice) {
+          return PopupMenuItem<String>(
+            value: choice,
+            child: Text(choice),
+          );
+        }).toList();
+      },
+    );
   }
 }
