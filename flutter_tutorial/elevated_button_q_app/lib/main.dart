@@ -39,6 +39,16 @@ class _ButtonHomePageState extends State<ButtonHomePage> {
       appBar: AppBar(
         title: const Text('ElevatedButton Example'),
       ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => _showSnackbar(context),
+          style: ElevatedButton.styleFrom(
+            elevation: 10,
+            padding: const EdgeInsets.all(16.0),
+          ),
+          child: const Text('Press me'),
+        ),
+      ),
     );
   }
 }
