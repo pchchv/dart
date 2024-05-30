@@ -10,30 +10,29 @@ class ButtonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Button',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Toggle TextButton Example'),
+        ),
+        body: const Center(
+          child: ToggleButton(),
+        ),
       ),
-      home: const ButtonHomePage(),
     );
   }
 }
 
-class ButtonHomePage extends StatefulWidget {
-  const ButtonHomePage({super.key});
+class ToggleButton extends StatefulWidget {
+  const ToggleButton({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _ButtonHomePageState createState() => _ButtonHomePageState();
+  _ToggleButtonState createState() => _ToggleButtonState();
 }
 
-class _ButtonHomePageState extends State<ButtonHomePage> {
+class _ToggleButtonState extends State<ToggleButton> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Text Button'),
-      ),
-    );
+    return () {};
   }
 }
