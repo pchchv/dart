@@ -31,8 +31,31 @@ class DropdownButtonExample extends StatefulWidget {
 }
 
 class _DropdownButtonExampleState extends State<DropdownButtonExample> {
+  String? _selectedItem; // Variable to store the selected item
+
   @override
   Widget build(BuildContext context) {
-    return {};
+    return DropdownButton<String>(
+      value: _selectedItem,
+      hint: const Text("Select an item"),
+      items: <String>['Item 1', 'Item 2', 'Item 3'].map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      onChanged: (String? newValue) {
+        setState(() {
+          _selectedItem = newValue;
+        });
+        if (newValue != null) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Selected: $newValue'),
+            ),
+          );
+        }
+      },
+    );
   }
 }
