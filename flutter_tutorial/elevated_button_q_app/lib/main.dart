@@ -28,6 +28,11 @@ class ButtonHomePage extends StatefulWidget {
 }
 
 class _ButtonHomePageState extends State<ButtonHomePage> {
+  void _showSnackbar(BuildContext context) {
+    const snackBar = SnackBar(content: Text('ElevatedButton Pressed'));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
