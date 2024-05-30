@@ -28,6 +28,14 @@ class ButtonHomePage extends StatefulWidget {
 }
 
 class _ButtonHomePageState extends State<ButtonHomePage> {
+  Color _buttonColor = Colors.blue;
+
+  void _changeColor() {
+    setState(() {
+      _buttonColor = _buttonColor == Colors.blue ? Colors.green : Colors.blue;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
