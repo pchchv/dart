@@ -41,6 +41,9 @@ class _ToggleButtonState extends State<ToggleButton> {
 
   @override
   Widget build(BuildContext context) {
-    return () {};
+    return TextButton(
+      onPressed: _toggleButton,
+      child: Text(_isEnabled ? 'Enabled' : 'Disabled'),
+    );
   }
 }
