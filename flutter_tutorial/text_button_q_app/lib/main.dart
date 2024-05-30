@@ -31,6 +31,14 @@ class ToggleButton extends StatefulWidget {
 }
 
 class _ToggleButtonState extends State<ToggleButton> {
+  bool _isEnabled = true;
+
+  void _toggleButton() {
+    setState(() {
+      _isEnabled = !_isEnabled;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return () {};
