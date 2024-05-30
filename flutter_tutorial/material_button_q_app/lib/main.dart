@@ -42,6 +42,15 @@ class _ButtonHomePageState extends State<ButtonHomePage> {
       appBar: AppBar(
         title: const Text('Color Changing Button'),
       ),
+      body: Center(
+        child: MaterialButton(
+          onPressed: _changeColor,
+          color: _buttonColor,
+          textColor: Colors.white,
+          padding: const EdgeInsets.all(16.0),
+          child: const Text('Press me'),
+        ),
+      ),
     );
   }
 }
