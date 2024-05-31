@@ -66,6 +66,17 @@ class _FeedbackFormState extends State<FeedbackForm> {
               maxLines: null,
               keyboardType: TextInputType.multiline,
             ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Feedback submitted')),
+                  );
+                }
+              },
+              child: const Text('Submit'),
+            ),
           ],
         ),
       ),
