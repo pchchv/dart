@@ -29,6 +29,15 @@ class FeedbackForm extends StatefulWidget {
 }
 
 class _FeedbackFormState extends State<FeedbackForm> {
+  final _formKey = GlobalKey<FormState>();
+  final _feedbackController = TextEditingController();
+
+  @override
+  void dispose() {
+    _feedbackController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Padding(padding: null);
