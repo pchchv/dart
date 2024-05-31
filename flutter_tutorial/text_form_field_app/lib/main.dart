@@ -40,6 +40,15 @@ class _FeedbackFormState extends State<FeedbackForm> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(padding: null);
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Form(
+        key: _formKey,
+        child: const Column(
+          children: <Widget>[
+          ],
+        ),
+      ),
+    );
   }
 }
