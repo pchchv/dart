@@ -44,8 +44,18 @@ class _FeedbackFormState extends State<FeedbackForm> {
       padding: const EdgeInsets.all(16.0),
       child: Form(
         key: _formKey,
-        child: const Column(
+        child: Column(
           children: <Widget>[
+            TextFormField(
+              controller: _feedbackController,
+              decoration: InputDecoration(
+                labelText: 'Your Feedback',
+                prefixIcon: const Icon(Icons.message),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+              ),
+            ),
           ],
         ),
       ),
