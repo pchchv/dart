@@ -45,6 +45,24 @@ class _LanguagesScreenState extends State<LanguagesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView();
+    return ListView(
+      children: languages.map((String interest) {
+        return CheckboxListTile(
+          title: Text(interest),
+          value: selectedlanguages.contains(interest),
+          onChanged: (bool? value) {
+            setState(() {
+              if (value == true) {
+                if (!selectedlanguages.contains(interest)) {
+                  selectedlanguages.add(interest);
+                }
+              } else {
+                selectedlanguages.remove(interest);
+              }
+            });
+          },
+        );
+      }).toList(),
+    );
   }
 }
