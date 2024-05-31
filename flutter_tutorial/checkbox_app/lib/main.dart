@@ -29,6 +29,20 @@ class LanguagesScreen extends StatefulWidget {
 }
 
 class _LanguagesScreenState extends State<LanguagesScreen> {
+  List<String> selectedlanguages = [];
+  List<String> languages = [
+    'Dart',
+    'Python',
+    'Java',
+    'JavaScript',
+    'C++',
+    'C#',
+    'Ruby',
+    'Go',
+    'Swift',
+    'Kotlin',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ListView();
