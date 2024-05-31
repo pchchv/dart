@@ -55,6 +55,16 @@ class _FeedbackFormState extends State<FeedbackForm> {
                   borderRadius: BorderRadius.circular(30.0),
                 ),
               ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some feedback';
+                } else if (value.length < 15) {
+                  return 'Feedback must be at least 15 characters long';
+                }
+                return null;
+              },
+              maxLines: null,
+              keyboardType: TextInputType.multiline,
             ),
           ],
         ),
