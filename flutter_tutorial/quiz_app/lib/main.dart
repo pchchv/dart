@@ -47,6 +47,20 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (_currentQuestionIndex >= _questions.length) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text('Quiz App'),
+        ),
+        body: Center(
+          child: Text(
+            'Your score is $_score/${_questions.length}',
+            style: const TextStyle(fontSize: 24),
+          ),
+        ),
+      );
+    }
+
     Question currentQuestion = _questions[_currentQuestionIndex];
 
     return Scaffold(
