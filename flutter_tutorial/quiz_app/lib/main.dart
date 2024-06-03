@@ -91,6 +91,11 @@ class _QuizScreenState extends State<QuizScreen> {
                 },
               );
             }),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _selectedOptionIndex == null ? null : _nextQuestion,
+              child: const Text('Next'),
+            ),
           ],
         ),
       ),
