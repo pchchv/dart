@@ -29,9 +29,13 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+  int _currentQuestionIndex = 0;
+  final List<Question> _questions = getQuestions();
 
   @override
   Widget build(BuildContext context) {
+    Question currentQuestion = _questions[_currentQuestionIndex];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Quiz App'),
