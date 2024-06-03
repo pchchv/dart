@@ -17,3 +17,17 @@ class QuizApp extends StatelessWidget {
     );
   }
 }
+
+class QuizScreen extends StatefulWidget {
+  const QuizScreen({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _QuizScreenState createState() => _QuizScreenState();
+}
+
+class _QuizScreenState extends State<QuizScreen> {
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
