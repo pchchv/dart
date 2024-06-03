@@ -67,10 +67,31 @@ class _QuizScreenState extends State<QuizScreen> {
       appBar: AppBar(
         title: const Text('Quiz App'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              currentQuestion.questionText,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            ...currentQuestion.options.asMap().entries.map((entry) {
+              int index = entry.key;
+              String option = entry.value;
+              return RadioListTile<int>(
+                title: Text(option),
+                value: index,
+                groupValue: _selectedOptionIndex,
+                onChanged: (int? value) {
+                  setState(() {
+                    _selectedOptionIndex = value;
+                  });
+                },
+              );
+            }),
+          ],
         ),
       ),
     );
