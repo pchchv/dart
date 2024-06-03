@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'quiz_data.dart';
+import 'quiz_data.dart';
 
 void main() {
   runApp(const QuizApp());
@@ -29,8 +29,21 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+  int _score = 0;
+  int? _selectedOptionIndex;
   int _currentQuestionIndex = 0;
   final List<Question> _questions = getQuestions();
+
+  void _nextQuestion() {
+    if (_selectedOptionIndex == _questions[_currentQuestionIndex].correctAnswerIndex) {
+      _score++;
+    }
+
+    setState(() {
+      _currentQuestionIndex++;
+      _selectedOptionIndex = null;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
