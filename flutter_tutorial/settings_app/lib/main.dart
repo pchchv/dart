@@ -12,4 +12,15 @@ class SettingsApp extends StatefulWidget {
 }
 
 class _SettingsAppState extends State<SettingsApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Settings Page'),
+        ),
+        body: ListView(),
+      ),
+    );
+  }
 }
