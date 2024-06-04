@@ -13,6 +13,8 @@ class SettingsApp extends StatefulWidget {
 }
 
 class _SettingsAppState extends State<SettingsApp> {
+  bool _notificationsEnabled = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +22,19 @@ class _SettingsAppState extends State<SettingsApp> {
         appBar: AppBar(
           title: const Text('Settings Page'),
         ),
-        body: ListView(),
+        body: ListView(
+          children: [
+            SwitchListTile(
+              title: const Text('Enable Notifications'),
+              value: _notificationsEnabled,
+              onChanged: (bool value) {
+                setState(() {
+                  _notificationsEnabled = value;
+                });
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
