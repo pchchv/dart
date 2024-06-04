@@ -28,4 +28,12 @@ class AgeCalculatorPage extends StatefulWidget {
 }
 
 class _AgeCalculatorPageState extends State<AgeCalculatorPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Age Calculator'),
+      ),
+    );
+  }
 }
