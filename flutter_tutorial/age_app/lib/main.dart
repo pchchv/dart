@@ -73,6 +73,11 @@ class _AgeCalculatorPageState extends State<AgeCalculatorPage> {
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _selectDate(context),
+              child: const Text('Select Birthdate'),
+            ),
+            const SizedBox(height: 20),
             Text(
               _age.isEmpty ? 'Your age will be displayed here' : 'Your age is: $_age',
               style: const TextStyle(fontSize: 24),
