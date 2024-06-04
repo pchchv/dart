@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  runApp(const AgeCalculatorApp());
 }
 
 class AgeCalculatorApp extends StatelessWidget {
