@@ -30,6 +30,7 @@ class AgeCalculatorPage extends StatefulWidget {
 
 class _AgeCalculatorPageState extends State<AgeCalculatorPage> {
   DateTime? _selectedDate;
+  String _age = '';
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +47,11 @@ class _AgeCalculatorPageState extends State<AgeCalculatorPage> {
                   ? 'No date selected'
                   : 'Selected Date: ${DateFormat.yMd().format(_selectedDate!)}',
               style: const TextStyle(fontSize: 18),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              _age.isEmpty ? 'Your age will be displayed here' : 'Your age is: $_age',
+              style: const TextStyle(fontSize: 24),
             ),
           ],
         ),
