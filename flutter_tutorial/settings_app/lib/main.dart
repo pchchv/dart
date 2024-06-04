@@ -15,6 +15,7 @@ class SettingsApp extends StatefulWidget {
 class _SettingsAppState extends State<SettingsApp> {
   bool _darkModeEnabled = false;
   bool _notificationsEnabled = false;
+  bool _locationTrackingEnabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +42,15 @@ class _SettingsAppState extends State<SettingsApp> {
               onChanged: (bool value) {
                 setState(() {
                   _darkModeEnabled = value;
+                });
+              },
+            ),
+            SwitchListTile(
+              title: const Text('Enable Location Tracking'),
+              value: _locationTrackingEnabled,
+              onChanged: (bool value) {
+                setState(() {
+                  _locationTrackingEnabled = value;
                 });
               },
             ),
