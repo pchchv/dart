@@ -16,6 +16,7 @@ class _SettingsAppState extends State<SettingsApp> {
   bool _darkModeEnabled = false;
   bool _notificationsEnabled = false;
   bool _locationTrackingEnabled = false;
+  bool _automaticUpdatesEnabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +52,15 @@ class _SettingsAppState extends State<SettingsApp> {
               onChanged: (bool value) {
                 setState(() {
                   _locationTrackingEnabled = value;
+                });
+              },
+            ),
+            SwitchListTile(
+              title: const Text('Enable Automatic Updates'),
+              value: _automaticUpdatesEnabled,
+              onChanged: (bool value) {
+                setState(() {
+                  _automaticUpdatesEnabled = value;
                 });
               },
             ),
