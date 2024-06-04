@@ -32,6 +32,15 @@ class _AgeCalculatorPageState extends State<AgeCalculatorPage> {
   DateTime? _selectedDate;
   String _age = '';
 
+  String _calculateAge(DateTime birthDate) {
+    DateTime today = DateTime.now();
+    int age = today.year - birthDate.year;
+    if (today.month < birthDate.month || (today.month == birthDate.month && today.day < birthDate.day)) {
+      age--;
+    }
+    return age.toString();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
