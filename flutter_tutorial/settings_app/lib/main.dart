@@ -13,11 +13,13 @@ class SettingsApp extends StatefulWidget {
 }
 
 class _SettingsAppState extends State<SettingsApp> {
+  bool _darkModeEnabled = false;
   bool _notificationsEnabled = false;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: _darkModeEnabled ? ThemeData.dark() : ThemeData.light(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Settings Page'),
@@ -30,6 +32,15 @@ class _SettingsAppState extends State<SettingsApp> {
               onChanged: (bool value) {
                 setState(() {
                   _notificationsEnabled = value;
+                });
+              },
+            ),
+            SwitchListTile(
+              title: const Text('Enable Dark Mode'),
+              value: _darkModeEnabled,
+              onChanged: (bool value) {
+                setState(() {
+                  _darkModeEnabled = value;
                 });
               },
             ),
