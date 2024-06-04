@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const AgeCalculatorApp());
@@ -28,11 +29,26 @@ class AgeCalculatorPage extends StatefulWidget {
 }
 
 class _AgeCalculatorPageState extends State<AgeCalculatorPage> {
+  DateTime? _selectedDate;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Age Calculator'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              _selectedDate == null
+                  ? 'No date selected'
+                  : 'Selected Date: ${DateFormat.yMd().format(_selectedDate!)}',
+              style: const TextStyle(fontSize: 18),
+            ),
+          ],
+        ),
       ),
     );
   }
