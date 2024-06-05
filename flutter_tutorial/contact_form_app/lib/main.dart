@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  runApp(const ContactApp());
 }
 
 class ContactApp extends StatelessWidget {
