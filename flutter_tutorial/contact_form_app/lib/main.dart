@@ -68,6 +68,14 @@ class _ContactFormState extends State<ContactForm> {
     return null;
   }
 
+  void _submitForm() {
+    if (_formKey.currentState?.validate() ?? false) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Form submitted successfully')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
