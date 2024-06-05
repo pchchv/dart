@@ -32,6 +32,13 @@ class _ContactFormState extends State<ContactForm> {
   final _nameController = TextEditingController();
   final _phoneController = TextEditingController();
 
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _phoneController.dispose();
+    super.dispose();
+  }
+
   String? _validateName(String? value) {
     if (value == null || value.isEmpty) {
       return 'Name is required';
