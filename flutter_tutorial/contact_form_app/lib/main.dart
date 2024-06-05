@@ -105,6 +105,11 @@ class _ContactFormState extends State<ContactForm> {
                 keyboardType: TextInputType.emailAddress,
                 validator: _validateEmail,
               ),
+              const SizedBox(height: 20.0),
+              ElevatedButton(
+                onPressed: _submitForm,
+                child: const Text('Submit'),
+              ),
             ],
           ),
         ),
