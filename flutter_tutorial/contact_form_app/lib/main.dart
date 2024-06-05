@@ -30,10 +30,21 @@ class ContactForm extends StatefulWidget {
 class _ContactFormState extends State<ContactForm> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
-  
+  final _phoneController = TextEditingController();
+
   String? _validateName(String? value) {
     if (value == null || value.isEmpty) {
       return 'Name is required';
+    }
+    return null;
+  }
+
+  String? _validatePhoneNumber(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone number is required';
+    }
+    if (!RegExp(r'^\d{10}$').hasMatch(value)) {
+      return 'Phone number must be 10 digits';
     }
     return null;
   }
@@ -54,6 +65,12 @@ class _ContactFormState extends State<ContactForm> {
                 controller: _nameController,
                 decoration: const InputDecoration(labelText: 'Name'),
                 validator: _validateName,
+              ),
+              TextFormField(
+                controller: _phoneController,
+                decoration: const InputDecoration(labelText: 'Phone Number'),
+                keyboardType: TextInputType.phone,
+                validator: _validatePhoneNumber,
               ),
             ],
           ),
