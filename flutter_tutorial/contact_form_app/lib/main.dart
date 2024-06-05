@@ -28,6 +28,13 @@ class ContactForm extends StatefulWidget {
 }
 
 class _ContactFormState extends State<ContactForm> {
+  String? _validateName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Name is required';
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
