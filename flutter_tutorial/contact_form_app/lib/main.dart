@@ -28,6 +28,9 @@ class ContactForm extends StatefulWidget {
 }
 
 class _ContactFormState extends State<ContactForm> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  
   String? _validateName(String? value) {
     if (value == null || value.isEmpty) {
       return 'Name is required';
@@ -40,6 +43,21 @@ class _ContactFormState extends State<ContactForm> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Contact Form'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            children: <Widget>[
+              TextFormField(
+                controller: _nameController,
+                decoration: const InputDecoration(labelText: 'Name'),
+                validator: _validateName,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
