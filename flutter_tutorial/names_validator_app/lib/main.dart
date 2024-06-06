@@ -36,6 +36,13 @@ class _NamesHomePageState extends State<NamesHomePage> {
     super.dispose();
   }
 
+  String? _validateField(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'This field cannot be empty';
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
