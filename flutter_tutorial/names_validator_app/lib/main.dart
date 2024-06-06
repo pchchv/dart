@@ -30,10 +30,12 @@ class NamesHomePage extends StatefulWidget {
 class _NamesHomePageState extends State<NamesHomePage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
 
   @override
   void dispose() {
     _firstNameController.dispose();
+    _lastNameController.dispose();
     super.dispose();
   }
 
@@ -59,6 +61,11 @@ class _NamesHomePageState extends State<NamesHomePage> {
               TextFormField(
                 controller: _firstNameController,
                 decoration: const InputDecoration(labelText: 'First Name'),
+                validator: _validateField,
+              ),
+              TextFormField(
+                controller: _lastNameController,
+                decoration: const InputDecoration(labelText: 'Last Name'),
                 validator: _validateField,
               ),
             ],
