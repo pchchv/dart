@@ -28,6 +28,7 @@ class NamesHomePage extends StatefulWidget {
 }
 
 class _NamesHomePageState extends State<NamesHomePage> {
+  final _formKey = GlobalKey<FormState>();
   final TextEditingController _firstNameController = TextEditingController();
 
   @override
@@ -49,8 +50,20 @@ class _NamesHomePageState extends State<NamesHomePage> {
       appBar: AppBar(
         title: const Text('Form Validation Demo'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: <Widget>[
+              TextFormField(
+                controller: _firstNameController,
+                decoration: const InputDecoration(labelText: 'First Name'),
+                validator: _validateField,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
