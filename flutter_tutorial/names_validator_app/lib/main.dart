@@ -77,6 +77,11 @@ class _NamesHomePageState extends State<NamesHomePage> {
                 decoration: const InputDecoration(labelText: 'Last Name'),
                 validator: _validateField,
               ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _submitForm,
+                child: const Text('Submit'),
+              ),
             ],
           ),
         ),
