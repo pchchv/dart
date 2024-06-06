@@ -14,6 +14,18 @@ class NamesApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const NamesHomePage(),
     );
   }
+}
+
+class NamesHomePage extends StatefulWidget {
+  const NamesHomePage({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _NamesHomePageState createState() => _NamesHomePageState();
+}
+
+class _NamesHomePageState extends State<NamesHomePage> {
 }
