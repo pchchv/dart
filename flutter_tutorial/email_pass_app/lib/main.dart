@@ -70,6 +70,12 @@ class _FormHomePageState extends State<FormHomePage> {
                 decoration: const InputDecoration(labelText: 'Email'),
                 validator: _validateEmail,
               ),
+              TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(labelText: 'Password'),
+                obscureText: true,
+                validator: _validatePassword,
+              ),
             ],
           ),
         ),
