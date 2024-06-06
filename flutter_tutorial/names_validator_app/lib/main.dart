@@ -39,6 +39,15 @@ class _NamesHomePageState extends State<NamesHomePage> {
     super.dispose();
   }
 
+  void _submitForm() {
+    if (_formKey.currentState?.validate() ?? false) {
+      // Form is valid, proceed with submission
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Form Submitted Successfully')),
+      );
+    }
+  }
+
   String? _validateField(String? value) {
     if (value == null || value.isEmpty) {
       return 'This field cannot be empty';
