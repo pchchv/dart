@@ -28,4 +28,15 @@ class FormHomePage extends StatefulWidget {
 }
 
 class _FormHomePageState extends State<FormHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Form Validation Demo'),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
+      ),
+    );
+  }
 }
