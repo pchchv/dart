@@ -28,6 +28,14 @@ class FormHomePage extends StatefulWidget {
 }
 
 class _FormHomePageState extends State<FormHomePage> {
+  final TextEditingController _emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
