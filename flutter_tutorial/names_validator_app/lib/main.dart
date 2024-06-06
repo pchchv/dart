@@ -28,6 +28,14 @@ class NamesHomePage extends StatefulWidget {
 }
 
 class _NamesHomePageState extends State<NamesHomePage> {
+  final TextEditingController _firstNameController = TextEditingController();
+
+  @override
+  void dispose() {
+    _firstNameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
