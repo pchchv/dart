@@ -63,6 +63,12 @@ class _FormHomePageState extends State<FormHomePage> {
                 decoration: const InputDecoration(labelText: 'Phone Number'),
                 validator: _validatePhone,
               ),
+              TextFormField(
+                controller: _addrController,
+                decoration: const InputDecoration(labelText: 'Address'),
+                obscureText: true,
+                validator: _validateAddress,
+              ),
             ],
           ),
         ),
