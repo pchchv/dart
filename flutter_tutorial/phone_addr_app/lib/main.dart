@@ -28,6 +28,15 @@ class FormHomePage extends StatefulWidget {
 }
 
 class _FormHomePageState extends State<FormHomePage> {
+  final TextEditingController _phoneController = TextEditingController();
+
+  String? _validatePhone(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone cannot be empty';
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
