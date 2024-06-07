@@ -14,6 +14,18 @@ class FormApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const FormHomePage(),
     );
   }
+}
+
+class FormHomePage extends StatefulWidget {
+  const FormHomePage({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _FormHomePageState createState() => _FormHomePageState();
+}
+
+class _FormHomePageState extends State<FormHomePage> {
 }
