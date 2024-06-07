@@ -32,6 +32,13 @@ class _FormHomePageState extends State<FormHomePage> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _addrController = TextEditingController();
 
+  @override
+  void dispose() {
+    _phoneController.dispose();
+    _addrController.dispose();
+    super.dispose();
+  }
+
   String? _validatePhone(String? value) {
     if (value == null || value.isEmpty) {
       return 'Phone cannot be empty';
