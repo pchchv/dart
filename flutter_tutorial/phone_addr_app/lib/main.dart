@@ -28,6 +28,7 @@ class FormHomePage extends StatefulWidget {
 }
 
 class _FormHomePageState extends State<FormHomePage> {
+  final _formKey = GlobalKey<FormState>();
   final TextEditingController _phoneController = TextEditingController();
 
   String? _validatePhone(String? value) {
@@ -43,8 +44,20 @@ class _FormHomePageState extends State<FormHomePage> {
       appBar: AppBar(
         title: const Text('Form Validation Demo'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: <Widget>[
+              TextFormField(
+                controller: _phoneController,
+                decoration: const InputDecoration(labelText: 'Phone Number'),
+                validator: _validatePhone,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
