@@ -30,10 +30,18 @@ class FormHomePage extends StatefulWidget {
 class _FormHomePageState extends State<FormHomePage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _addrController = TextEditingController();
 
   String? _validatePhone(String? value) {
     if (value == null || value.isEmpty) {
       return 'Phone cannot be empty';
+    }
+    return null;
+  }
+
+  String? _validateAddress(String? value) {
+    if (value == null || value.length < 10) {
+      return 'Address must be at least 10 characters long';
     }
     return null;
   }
