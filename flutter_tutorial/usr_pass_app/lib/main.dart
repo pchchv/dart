@@ -28,6 +28,7 @@ class FormHomePage extends StatefulWidget {
 }
 
 class _FormHomePageState extends State<FormHomePage> {
+  String _password = '';
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -62,6 +63,15 @@ class _FormHomePageState extends State<FormHomePage> {
                 controller: _usernameController,
                 decoration: const InputDecoration(labelText: 'Username'),
                 validator: _validateUsername,
+              ),
+              TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(labelText: 'Password'),
+                obscureText: true,
+                validator: _validatePassword,
+                onSaved: (value) {
+                  _password = value!;
+                },
               ),
             ],
           ),
