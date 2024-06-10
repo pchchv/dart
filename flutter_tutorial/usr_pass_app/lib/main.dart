@@ -28,4 +28,21 @@ class FormHomePage extends StatefulWidget {
 }
 
 class _FormHomePageState extends State<FormHomePage> {
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Password Validation'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: const Column(),
+        ),
+      ),
+    );
+  }
 }
