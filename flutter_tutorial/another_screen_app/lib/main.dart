@@ -26,6 +26,16 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Home Screen"),
       ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const AboutScreen()),
+            );
+          },
+          child: const Text('Go to About Screen'),
+        ),
+      ),
     );
   }
 }
@@ -38,6 +48,14 @@ class AboutScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("About Screen"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text("Go Back"),
+        ),
       ),
     );
   }
