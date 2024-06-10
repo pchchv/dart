@@ -66,6 +66,15 @@ class _FormHomePageState extends State<FormHomePage> {
     return null;
   }
 
+  void _submitForm() {
+    if (_formKey.currentState?.validate() ?? false) {
+      // Form is valid, proceed with submission
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Form Submitted Successfully')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
