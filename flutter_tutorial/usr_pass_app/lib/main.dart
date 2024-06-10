@@ -107,6 +107,11 @@ class _FormHomePageState extends State<FormHomePage> {
                 obscureText: true,
                 validator: _confirmPassword,
               ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _submitForm,
+                child: const Text('Submit'),
+              ),
             ],
           ),
         ),
