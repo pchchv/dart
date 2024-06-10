@@ -48,7 +48,15 @@ class _FormHomePageState extends State<FormHomePage> {
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
-          child: const Column(),
+          child: Column(
+            children: <Widget>[
+              TextFormField(
+                controller: _usernameController,
+                decoration: const InputDecoration(labelText: 'Username'),
+                validator: _validateUsername,
+              ),
+            ],
+          ),
         ),
       ),
     );
