@@ -34,6 +34,14 @@ class _FormHomePageState extends State<FormHomePage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+    _passController.dispose();
+    super.dispose();
+  }
+
   String? _validateUsername(String? value) {
     if (value == null || value.isEmpty) {
       return 'Username cannot be empty';
@@ -47,7 +55,7 @@ class _FormHomePageState extends State<FormHomePage> {
     }
     return null;
   }
-  
+
   String? _confirmPassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password cannot be empty';
