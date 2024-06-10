@@ -84,6 +84,12 @@ class _FormHomePageState extends State<FormHomePage> {
                   _password = value!;
                 },
               ),
+              TextFormField(
+                controller: _passController,
+                decoration: const InputDecoration(labelText: 'Confirm Password'),
+                obscureText: true,
+                validator: _confirmPassword,
+              ),
             ],
           ),
         ),
