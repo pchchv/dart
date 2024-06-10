@@ -30,6 +30,7 @@ class FormHomePage extends StatefulWidget {
 class _FormHomePageState extends State<FormHomePage> {
   String _password = '';
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _passController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -43,6 +44,16 @@ class _FormHomePageState extends State<FormHomePage> {
   String? _validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password cannot be empty';
+    }
+    return null;
+  }
+  
+  String? _confirmPassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Password cannot be empty';
+    }
+    if (value != _password) {
+      return 'Passwords must match';
     }
     return null;
   }
