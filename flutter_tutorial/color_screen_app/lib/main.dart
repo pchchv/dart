@@ -14,6 +14,11 @@ class ColorScreenApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/color_selection': (context) => ColorSelectionScreen(),
+      },
     );
   }
 }
