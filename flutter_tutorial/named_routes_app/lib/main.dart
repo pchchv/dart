@@ -35,7 +35,17 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Screen'),
       ),
-      body: const Center(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              '/shop',
+              arguments: products,
+            );
+          },
+          child: const Text('Go to Shop'),
+        ),
       ),
     );
   }
