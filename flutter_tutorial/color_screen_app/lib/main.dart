@@ -38,3 +38,16 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+class ColorSelectionScreen extends StatelessWidget {
+  const ColorSelectionScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Select a Color'),
+      ),
+    );
+  }
+}
