@@ -63,7 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class ColorSelectionScreen extends StatelessWidget {
-  const ColorSelectionScreen({super.key});
+  ColorSelectionScreen({super.key});
+  final List<Color> colors = [Colors.red, Colors.green, Colors.blue, Colors.yellow, Colors.purple];
 
   @override
   Widget build(BuildContext context) {
