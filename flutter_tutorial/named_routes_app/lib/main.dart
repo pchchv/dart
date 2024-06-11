@@ -63,6 +63,14 @@ class ShopScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Shop Screen'),
       ),
+      body: ListView.builder(
+        itemCount: products.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(products[index]),
+          );
+        },
+      ),
     );
   }
 }
