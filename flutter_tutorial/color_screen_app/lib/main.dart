@@ -72,6 +72,20 @@ class ColorSelectionScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Select a Color'),
       ),
+      body: ListView.builder(
+        itemCount: colors.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: CircleAvatar(
+              backgroundColor: colors[index],
+            ),
+            title: Text(colors[index].toString()),
+            onTap: () {
+              Navigator.pop(context, colors[index]);
+            },
+          );
+        },
+      ),
     );
   }
 }
