@@ -32,6 +32,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Color _backgroundColor = Colors.white;
+
+  void _navigateAndSelectColor(BuildContext context) async {
+    final selectedColor = await Navigator.pushNamed(context, '/color_selection');
+    if (selectedColor != null && selectedColor is Color) {
+      setState(() {
+        _backgroundColor = selectedColor;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
