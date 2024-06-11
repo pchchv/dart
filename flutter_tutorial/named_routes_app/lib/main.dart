@@ -23,6 +23,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Sample list of products
+    final List<String> products = ['Product 1', 'Product 2', 'Product 3', 'Product 4'];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Screen'),
