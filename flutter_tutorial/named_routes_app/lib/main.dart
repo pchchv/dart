@@ -56,6 +56,9 @@ class ShopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Retrieve the list of products from the arguments
+    final List<String> products = ModalRoute.of(context)?.settings.arguments as List<String>;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Shop Screen'),
