@@ -14,6 +14,11 @@ class ScreenApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/shop': (context) => const ShopScreen(),
+      },
     );
   }
 }
