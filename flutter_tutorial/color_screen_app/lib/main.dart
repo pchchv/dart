@@ -50,6 +50,13 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Home Screen'),
       ),
       body: Container(
+        color: _backgroundColor,
+        child: Center(
+          child: ElevatedButton(
+            onPressed: () => _navigateAndSelectColor(context),
+            child: const Text('Select Color'),
+          ),
+        ),
       ),
     );
   }
