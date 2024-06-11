@@ -1,16 +1,4 @@
 # color_screen_app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Challenge from [Flutter Tutorial](https://flutter-tutorial.net/navigation-in-flutter/return-data-from-screen-in-flutter/):
+Create a app with a HomeScreen and a ColorSelectionScreen. The HomeScreen should have a button to navigate to the ColorSelectionScreen where the user can select a color. Once a color is selected, the ColorSelectionScreen should return that color to the HomeScreen, which then changes its background color accordingly.
