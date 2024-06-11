@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  runApp(const ColorScreenApp());
 }
 
 class ColorScreenApp extends StatelessWidget {
