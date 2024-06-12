@@ -37,6 +37,9 @@ class TodoTabs extends StatefulWidget {
 }
 
 class _TodoTabsState extends State<TodoTabs> {
+  List<String> activeTasks = ['Task 1', 'Task 2'];
+  List<String> completedTasks = ['Task 3', 'Task 4'];
+
   @override
   Widget build(BuildContext context) {
     return const TabBarView(
