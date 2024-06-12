@@ -14,6 +14,12 @@ class TodoApp extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             title: const Text('Todo App'),
+            bottom: const TabBar(
+              tabs: [
+                Tab(text: 'Active'),
+                Tab(text: 'Completed'),
+              ],
+            ),
           ),
         ),
       ),
