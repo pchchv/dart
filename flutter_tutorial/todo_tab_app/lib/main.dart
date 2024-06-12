@@ -70,6 +70,20 @@ class _TodoTabsState extends State<TodoTabs> {
             }).toList(),
           ),
         ),
+        Center(
+          child: ListView(
+            children: completedTasks.map((task) {
+              return ListTile(
+                title: Text(task),
+                leading: const Icon(Icons.info),
+                trailing: IconButton(
+                  icon: const Icon(Icons.undo),
+                  onPressed: () => moveTask(task, false),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
       ],
     );
   }
