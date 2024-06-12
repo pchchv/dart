@@ -21,8 +21,27 @@ class TodoApp extends StatelessWidget {
               ],
             ),
           ),
+          body: const TodoTabs(),
         ),
       ),
+    );
+  }
+}
+
+class TodoTabs extends StatefulWidget {
+  const TodoTabs({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _TodoTabsState createState() => _TodoTabsState();
+}
+
+class _TodoTabsState extends State<TodoTabs> {
+  @override
+  Widget build(BuildContext context) {
+    return const TabBarView(
+      children: [
+      ],
     );
   }
 }
