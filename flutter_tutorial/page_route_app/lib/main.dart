@@ -38,6 +38,15 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Go to About'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ContactScreen()),
+                );
+              },
+              child: const Text('Go to Contact'),
+            ),
           ],
         ),
       ),
