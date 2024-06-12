@@ -54,8 +54,22 @@ class _TodoTabsState extends State<TodoTabs> {
 
   @override
   Widget build(BuildContext context) {
-    return const TabBarView(
+    return TabBarView(
       children: [
+        Center(
+          child: ListView(
+            children: activeTasks.map((task) {
+              return ListTile(
+                title: Text(task),
+                leading: const Icon(Icons.info),
+                trailing: IconButton(
+                  icon: const Icon(Icons.check),
+                  onPressed: () => moveTask(task, true),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
       ],
     );
   }
