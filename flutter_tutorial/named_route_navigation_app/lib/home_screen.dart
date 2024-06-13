@@ -9,9 +9,23 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Screen'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/screenA');
+              },
+              child: const Text('Go to Screen A'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/screenB');
+              },
+              child: const Text('Go to Screen B'),
+            ),
+          ],
         ),
       ),
     );
