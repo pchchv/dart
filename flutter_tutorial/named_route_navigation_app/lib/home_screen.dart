@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,24 +10,9 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Screen'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/screenA');
-              },
-              child: const Text('Go to Screen A'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/screenB');
-              },
-              child: const Text('Go to Screen B'),
-            ),
-          ],
-        ),
+      drawer: const AppDrawer(), // Add the Drawer here
+      body: const Center(
+        child: Text('Welcome to Home Screen!'),
       ),
     );
   }
