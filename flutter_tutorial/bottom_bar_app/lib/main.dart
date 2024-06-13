@@ -34,3 +34,36 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+class HomeTab extends StatelessWidget {
+  const HomeTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Home Tab'),
+    );
+  }
+}
+
+class AboutTab extends StatelessWidget {
+  const AboutTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('About Tab'),
+    );
+  }
+}
+
+class ContactTab extends StatelessWidget {
+  const ContactTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Contact Tab'),
+    );
+  }
+}
