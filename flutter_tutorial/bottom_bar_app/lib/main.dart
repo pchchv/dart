@@ -26,6 +26,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
+  final List<Widget> _pages = [
+    const HomeTab(),
+    const AboutTab(),
+    const ContactTab(),
+  ];
 
   void _onTabTapped(int index) {
     setState(() {
@@ -38,6 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bottom Navigation Bar'),
+      ),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _pages,
       ),
     );
   }
