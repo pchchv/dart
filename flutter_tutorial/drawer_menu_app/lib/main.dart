@@ -98,8 +98,8 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: const <Widget>[
-          DrawerHeader(
+        children: <Widget>[
+          const DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
@@ -110,6 +110,34 @@ class AppDrawer extends StatelessWidget {
                 fontSize: 24,
               ),
             ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.account_circle),
+            title: const Text('Screen 1'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/screen1');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings),
+            title: const Text('Screen 2'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/screen2');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.info),
+            title: const Text('Screen 3'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/screen3');
+            },
           ),
         ],
       ),
