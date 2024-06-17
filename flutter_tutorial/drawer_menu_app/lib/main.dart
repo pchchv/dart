@@ -27,6 +27,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home'),
       ),
+      drawer: const AppDrawer(),
       body: const Center(
         child: Text('Home Screen'),
       ),
@@ -77,6 +78,21 @@ class Screen3 extends StatelessWidget {
       ),
       body: const Center(
         child: Text('Screen 3'),
+      ),
+    );
+  }
+}
+
+class AppDrawer extends StatelessWidget {
+  const AppDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: const <Widget>[
+        ],
       ),
     );
   }
