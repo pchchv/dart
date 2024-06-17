@@ -14,6 +14,13 @@ class MenuApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/screen1': (context) => const Screen1(),
+        '/screen2': (context) => const Screen2(),
+        '/screen3': (context) => const Screen3(),
+      },
     );
   }
 }
