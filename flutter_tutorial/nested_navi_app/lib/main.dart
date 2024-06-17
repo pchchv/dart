@@ -116,3 +116,18 @@ class SecondTabScreen2 extends StatelessWidget {
     );
   }
 }
+
+class FirstTabNavigator extends StatelessWidget {
+  const FirstTabNavigator({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Navigator(
+      onGenerateRoute: (RouteSettings settings) {
+        return MaterialPageRoute(
+          builder: (context) => const FirstTabScreen1(),
+        );
+      },
+    );
+  }
+}
