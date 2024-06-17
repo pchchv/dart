@@ -75,3 +75,44 @@ class FirstTabScreen2 extends StatelessWidget {
     );
   }
 }
+
+class SecondTabScreen1 extends StatelessWidget {
+  const SecondTabScreen1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Second Tab Screen 1')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SecondTabScreen2()),
+            );
+          },
+          child: const Text('Go to Second Tab Screen 2'),
+        ),
+      ),
+    );
+  }
+}
+
+class SecondTabScreen2 extends StatelessWidget {
+  const SecondTabScreen2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Second Tab Screen 2')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Back to Second Tab Screen 1'),
+        ),
+      ),
+    );
+  }
+}
