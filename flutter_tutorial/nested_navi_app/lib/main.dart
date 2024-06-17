@@ -34,3 +34,44 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+class FirstTabScreen1 extends StatelessWidget {
+  const FirstTabScreen1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('First Tab Screen 1')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const FirstTabScreen2()),
+            );
+          },
+          child: const Text('Go to First Tab Screen 2'),
+        ),
+      ),
+    );
+  }
+}
+
+class FirstTabScreen2 extends StatelessWidget {
+  const FirstTabScreen2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('First Tab Screen 2')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Back to First Tab Screen 1'),
+        ),
+      ),
+    );
+  }
+}
