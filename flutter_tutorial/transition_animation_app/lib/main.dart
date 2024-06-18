@@ -1,4 +1,6 @@
 import 'home_screen.dart';
+import 'second_screen.dart';
+import 'custom_page_route.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +20,12 @@ class ScreensApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == '/second') {
+          return CustomPageRoute(page: const SecondScreen());
+        }
+        return null;
       },
     );
   }
