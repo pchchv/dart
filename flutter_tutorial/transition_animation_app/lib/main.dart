@@ -1,3 +1,4 @@
+import 'home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +16,9 @@ class ScreensApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+      },
     );
   }
 }
