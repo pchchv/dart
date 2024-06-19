@@ -25,4 +25,17 @@ class InterestCalculatorScreen extends StatefulWidget {
 }
 
 class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Simple Interest Calculator')),
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        child: const Column(
+          children: [
+          ],
+        ),
+      ),
+    );
+  }
 }
