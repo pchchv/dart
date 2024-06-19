@@ -42,4 +42,12 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
       ),
     );
   }
+
+  Widget _buildTextField(TextEditingController controller, String label) {
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(labelText: label),
+      keyboardType: TextInputType.number,
+    );
+  }
 }
