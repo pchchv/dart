@@ -30,10 +30,16 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      padding: EdgeInsets.all(20.0),
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         children: <Widget>[
+          const CircleAvatar(
+            radius: 80,
+            backgroundImage: NetworkImage(
+                'https://avatars.githubusercontent.com/u/56176644?s=400&u=5545472ebd6c31f29e021d3c2206abf5236e2807&v=4'),
+          ),
+          const SizedBox(height: 20),
         ],
       ),
     );
