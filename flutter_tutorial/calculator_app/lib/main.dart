@@ -62,6 +62,12 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
             _buildTextField(rateController, 'Rate of Interest'),
             _buildTextField(timeController, 'Time in Years'),
             const SizedBox(height: 20),
+            MaterialButton(
+              onPressed: _calculateInterest,
+              child: const Text('Calculate'),
+            ),
+            const SizedBox(height: 20),
+            Text(result, style: const TextStyle(fontSize: 20)),
           ],
         ),
       ),
