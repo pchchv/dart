@@ -19,6 +19,22 @@ class ProfileApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Profile'),
         ),
+        body: const ProfilePage(),
+      ),
+    );
+  }
+}
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SingleChildScrollView(
+      padding: EdgeInsets.all(20.0),
+      child: Column(
+        children: <Widget>[
+        ],
       ),
     );
   }
