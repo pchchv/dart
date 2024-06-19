@@ -35,8 +35,12 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
       appBar: AppBar(title: const Text('Simple Interest Calculator')),
       body: Container(
         padding: const EdgeInsets.all(20),
-        child: const Column(
+        child: Column(
           children: [
+            _buildTextField(principalController, 'Principal'),
+            _buildTextField(rateController, 'Rate of Interest'),
+            _buildTextField(timeController, 'Time in Years'),
+            const SizedBox(height: 20),
           ],
         ),
       ),
