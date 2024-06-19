@@ -30,24 +30,6 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
   final TextEditingController timeController = TextEditingController();
   String result = '';
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Simple Interest Calculator')),
-      body: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            _buildTextField(principalController, 'Principal'),
-            _buildTextField(rateController, 'Rate of Interest'),
-            _buildTextField(timeController, 'Time in Years'),
-            const SizedBox(height: 20),
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget _buildTextField(TextEditingController controller, String label) {
     return TextField(
       controller: controller,
@@ -66,5 +48,23 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
     setState(() {
       result = 'Simple Interest: \$${interest.toStringAsFixed(2)}';
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Simple Interest Calculator')),
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            _buildTextField(principalController, 'Principal'),
+            _buildTextField(rateController, 'Rate of Interest'),
+            _buildTextField(timeController, 'Time in Years'),
+            const SizedBox(height: 20),
+          ],
+        ),
+      ),
+    );
   }
 }
