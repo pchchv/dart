@@ -25,6 +25,10 @@ class InterestCalculatorScreen extends StatefulWidget {
 }
 
 class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
+  final TextEditingController principalController = TextEditingController();
+  final TextEditingController rateController = TextEditingController();
+  final TextEditingController timeController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
