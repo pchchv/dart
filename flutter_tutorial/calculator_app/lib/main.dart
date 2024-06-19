@@ -28,6 +28,7 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
   final TextEditingController principalController = TextEditingController();
   final TextEditingController rateController = TextEditingController();
   final TextEditingController timeController = TextEditingController();
+  String result = '';
 
   @override
   Widget build(BuildContext context) {
@@ -53,5 +54,17 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
       decoration: InputDecoration(labelText: label),
       keyboardType: TextInputType.number,
     );
+  }
+
+  void _calculateInterest() {
+    double principal = double.tryParse(principalController.text) ?? 0.0;
+    double rate = double.tryParse(rateController.text) ?? 0.0;
+    double time = double.tryParse(timeController.text) ?? 0.0;
+
+    double interest = principal * rate * time / 100;
+
+    setState(() {
+      result = 'Simple Interest: \$${interest.toStringAsFixed(2)}';
+    });
   }
 }
