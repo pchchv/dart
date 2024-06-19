@@ -40,6 +40,17 @@ class ProfilePage extends StatelessWidget {
                 'https://avatars.githubusercontent.com/u/56176644?s=400&u=5545472ebd6c31f29e021d3c2206abf5236e2807&v=4'),
           ),
           const SizedBox(height: 20),
+          Text('Evgenii Pochechuev',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge
+                  ?.copyWith(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 10),
+          Text(
+              "I'm a programmer and an entrepreneur",
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyLarge),
+          const SizedBox(height: 20),
         ],
       ),
     );
