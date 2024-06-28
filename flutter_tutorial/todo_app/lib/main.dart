@@ -35,6 +35,10 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
         itemCount: tasks.length,
         itemBuilder: (context, index) => ListTile(title: Text(tasks[index])),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _addTask(),
+        child: const Icon(Icons.add),
+      ),
     );
   }
 
