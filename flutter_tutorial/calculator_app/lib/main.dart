@@ -74,3 +74,28 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
     );
   }
 }
+
+class ResultScreen extends StatelessWidget {
+  final String result;
+
+  const ResultScreen({super.key, required this.result});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Calculation Result')),
+      body: Center(
+        child: Card(
+          margin: const EdgeInsets.all(20),
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Text(
+              result,
+              style: const TextStyle(fontSize: 24),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
