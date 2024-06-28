@@ -37,4 +37,28 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
       ),
     );
   }
+
+  void _addTask() {
+    // Prompt user to enter a task
+    TextEditingController controller = TextEditingController();
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('New Task'),
+        content: TextField(controller: controller),
+        actions: [
+          MaterialButton(
+            child: const Text('Add'),
+            onPressed: () {
+              setState(() {
+                tasks.add(controller.text);
+                controller.clear();
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }
