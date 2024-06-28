@@ -25,10 +25,16 @@ class ToDoListScreen extends StatefulWidget {
 }
 
 class _ToDoListScreenState extends State<ToDoListScreen> {
+  List<String> tasks = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Todo List')),
+      body: ListView.builder(
+        itemCount: tasks.length,
+        itemBuilder: (context, index) => ListTile(title: Text(tasks[index])),
+      ),
     );
   }
 }
