@@ -28,7 +28,6 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
   final TextEditingController principalController = TextEditingController();
   final TextEditingController rateController = TextEditingController();
   final TextEditingController timeController = TextEditingController();
-  String result = '';
 
   Widget _buildTextField(TextEditingController controller, String label) {
     return TextField(
@@ -45,9 +44,15 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
 
     double interest = principal * rate * time / 100;
 
-    setState(() {
-      result = 'Simple Interest: \$${interest.toStringAsFixed(2)}';
-    });
+    String result = 'Simple Interest: \$${interest.toStringAsFixed(2)}';
+
+    // Navigate to the ResultScreen with the result
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ResultScreen(result: result),
+      ),
+    );
   }
 
   @override
@@ -64,10 +69,10 @@ class _InterestCalculatorScreenState extends State<InterestCalculatorScreen> {
             const SizedBox(height: 20),
             MaterialButton(
               onPressed: _calculateInterest,
+              color: Colors.blue,
+              textColor: Colors.white,
               child: const Text('Calculate'),
             ),
-            const SizedBox(height: 20),
-            Text(result, style: const TextStyle(fontSize: 20)),
           ],
         ),
       ),
