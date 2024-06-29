@@ -33,7 +33,10 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
       appBar: AppBar(title: const Text('Todo List')),
       body: ListView.builder(
         itemCount: tasks.length,
-        itemBuilder: (context, index) => ListTile(title: Text(tasks[index])),
+        itemBuilder: (context, index) => ListTile(
+          title: Text(tasks[index]),
+          onTap: () => _deleteTask(index),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _addTask(),
