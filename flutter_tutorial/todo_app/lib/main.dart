@@ -65,4 +65,31 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
       ),
     );
   }
+
+  void _deleteTask(int index) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Delete Task'),
+        content: const Text('Are you sure you want to delete this task?'),
+        actions: [
+          MaterialButton(
+            child: const Text('Cancel'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          MaterialButton(
+            child: const Text('Delete'),
+            onPressed: () {
+              setState(() {
+                tasks.removeAt(index);
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }
