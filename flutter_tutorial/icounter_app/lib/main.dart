@@ -66,6 +66,10 @@ class _CounterPageState extends State<CounterPage> {
                   onPressed: _decrementCounter,
                   child: const Text('Decrement'),
                 ),
+                ElevatedButton(
+                  onPressed: _incrementCounter,
+                  child: const Text('Increment'),
+                ),
               ],
             ),
           ],
