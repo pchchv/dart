@@ -59,6 +59,15 @@ class _CounterPageState extends State<CounterPage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: _decrementCounter,
+                  child: const Text('Decrement'),
+                ),
+              ],
+            ),
           ],
         ),
       ),
