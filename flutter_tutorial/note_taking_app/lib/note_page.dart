@@ -52,8 +52,21 @@ class _NotePageState extends State<NotePage> {
       appBar: AppBar(
         title: const Text('Note Taking App'),
       ),
-      body: const Column(
+      body: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _controller,
+              decoration: InputDecoration(
+                labelText: 'Add a new note',
+                suffixIcon: IconButton(
+                  icon: const Icon(Icons.add),
+                  onPressed: _addNote,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
