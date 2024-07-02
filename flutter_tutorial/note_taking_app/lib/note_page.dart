@@ -12,6 +12,12 @@ class _NotePageState extends State<NotePage> {
   final TextEditingController _controller = TextEditingController();
   List<Note> _notes = [];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadNotes();
+  }
+
   void _loadNotes() async {
     List<Note> notes = await NoteDbHelper.instance.getNotes();
     setState(() {
