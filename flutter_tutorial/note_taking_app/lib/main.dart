@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'note_page.dart';
 
 void main() {
   runApp(const NoteTakingApp());
@@ -14,6 +15,7 @@ class NoteTakingApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const NotePage(),
     );
   }
 }
