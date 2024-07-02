@@ -92,6 +92,14 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                 );
               }).toList(),
             ),
+            ElevatedButton(
+              onPressed: _convert,
+              child: const Text('Convert'),
+            ),
+            if (_rate != 0.0)
+              Text(
+                'Converted Amount: ${(double.parse(_controller.text) * _rate).toStringAsFixed(2)} $_toCurrency',
+              ),
           ],
         ),
       ),
