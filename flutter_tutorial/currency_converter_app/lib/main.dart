@@ -1,4 +1,6 @@
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'dart:convert';
 
 void main() {
   runApp(const ConverterApp());
@@ -28,6 +30,21 @@ class CurrencyConverter extends StatefulWidget {
 }
 
 class _CurrencyConverterState extends State<CurrencyConverter> {
+  String _fromCurrency = 'USD';
+  String _toCurrency = 'EUR';
+  double _rate = 0.0;
+
+  void _convert() async {
+    String apiUrl = 'https://api.exchangerate-api.com/v4/latest/$_fromCurrency';
+    http.Response response = await http.get(Uri.parse(apiUrl));
+    if (response.statusCode == 200) {
+      var jsonResponse = json.decode(response.body);
+      setState(() {
+        _rate = jsonResponse['rates'][_toCurrency];
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
