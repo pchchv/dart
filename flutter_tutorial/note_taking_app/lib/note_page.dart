@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'note_db_helper.dart';
+import 'note.dart';
 
 class NotePage extends StatefulWidget {
   const NotePage({super.key});
@@ -24,7 +26,26 @@ class _NotePageState extends State<NotePage> {
       _notes = notes;
     });
   }
-  
+
+  void _addNote() async {
+    String content = _controller.text;
+    if (content.isEmpty) return;
+
+    Note note = Note(
+      id: DateTime.now().millisecondsSinceEpoch,
+      content: content,
+    );
+
+    await NoteDbHelper.instance.insert(note);
+    _controller.clear();
+    _loadNotes();
+  }
+
+  void _deleteNote(int id) async {
+    await NoteDbHelper.instance.delete(id);
+    _loadNotes();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
