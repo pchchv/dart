@@ -46,4 +46,13 @@ class NoteDbHelper {
 
     return result.map((json) => Note.fromMap(json)).toList();
   }
+
+  Future<int> delete(int id) async {
+    final db = await instance.database;
+    return await db.delete(
+      'notes',
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
 }
