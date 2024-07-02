@@ -1,5 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'note.dart';
+
 class NoteDbHelper {
   static final NoteDbHelper instance = NoteDbHelper._init();
   static Database? _database;
@@ -31,5 +33,17 @@ class NoteDbHelper {
 
     _database = await _initDB('notes.db');
     return _database!;
+  }
+
+  Future<int> insert(Note note) async {
+    final db = await instance.database;
+    return await db.insert('notes', note.toMap());
+  }
+
+  Future<List<Note>> getNotes() async {
+    final db = await instance.database;
+    final result = await db.query('notes');
+
+    return result.map((json) => Note.fromMap(json)).toList();
   }
 }
