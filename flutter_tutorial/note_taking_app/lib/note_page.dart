@@ -9,6 +9,16 @@ class NotePage extends StatefulWidget {
 }
 
 class _NotePageState extends State<NotePage> {
+  final TextEditingController _controller = TextEditingController();
+  List<Note> _notes = [];
+
+  void _loadNotes() async {
+    List<Note> notes = await NoteDbHelper.instance.getNotes();
+    setState(() {
+      _notes = notes;
+    });
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
