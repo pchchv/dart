@@ -30,6 +30,7 @@ class CurrencyConverter extends StatefulWidget {
 }
 
 class _CurrencyConverterState extends State<CurrencyConverter> {
+  final TextEditingController _controller = TextEditingController();
   String _fromCurrency = 'USD';
   String _toCurrency = 'EUR';
   double _rate = 0.0;
@@ -51,10 +52,17 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
       appBar: AppBar(
         title: const Text('Currency Converter'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            TextField(
+              controller: _controller,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                labelText: 'Amount',
+              ),
+            ),
           ],
         ),
       ),
