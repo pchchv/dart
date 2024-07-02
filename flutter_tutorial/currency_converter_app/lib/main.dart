@@ -14,6 +14,18 @@ class ConverterApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const CurrencyConverter(),
     );
   }
+}
+
+class CurrencyConverter extends StatefulWidget {
+  const CurrencyConverter({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _CurrencyConverterState createState() => _CurrencyConverterState();
+}
+
+class _CurrencyConverterState extends State<CurrencyConverter> {
 }
