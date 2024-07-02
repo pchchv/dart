@@ -67,6 +67,21 @@ class _NotePageState extends State<NotePage> {
               ),
             ),
           ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: _notes.length,
+              itemBuilder: (context, index) {
+                final note = _notes[index];
+                return ListTile(
+                  title: Text(note.content),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: () => _deleteNote(note.id),
+                  ),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
