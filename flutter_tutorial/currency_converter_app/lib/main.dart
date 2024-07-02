@@ -31,6 +31,7 @@ class CurrencyConverter extends StatefulWidget {
 
 class _CurrencyConverterState extends State<CurrencyConverter> {
   final TextEditingController _controller = TextEditingController();
+  final List<String> _currencies = ['USD', 'EUR', 'GBP', 'INR'];
   String _fromCurrency = 'USD';
   String _toCurrency = 'EUR';
   double _rate = 0.0;
@@ -62,6 +63,34 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
               decoration: const InputDecoration(
                 labelText: 'Amount',
               ),
+            ),
+            DropdownButton<String>(
+              value: _fromCurrency,
+              onChanged: (String? newValue) {
+                setState(() {
+                  _fromCurrency = newValue!;
+                });
+              },
+              items: _currencies.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+            DropdownButton<String>(
+              value: _toCurrency,
+              onChanged: (String? newValue) {
+                setState(() {
+                  _toCurrency = newValue!;
+                });
+              },
+              items: _currencies.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
             ),
           ],
         ),
