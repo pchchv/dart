@@ -28,4 +28,16 @@ class CalculatorHomePage extends StatefulWidget {
 }
 
 class _CalculatorHomePageState extends State<CalculatorHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Basic Calculator'),
+      ),
+      body: const Column(
+        children: <Widget>[
+        ],
+      ),
+    );
+  }
 }
