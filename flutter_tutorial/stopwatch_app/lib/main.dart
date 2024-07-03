@@ -29,11 +29,18 @@ class StopwatchHomePage extends StatefulWidget {
 
 class _StopwatchHomePageState extends State<StopwatchHomePage> {
   late Stopwatch _stopwatch;
+  late Timer _timer;
 
   @override
   void initState() {
     super.initState();
     _stopwatch = Stopwatch();
+  }
+
+  void _startTimer() {
+    _timer = Timer.periodic(const Duration(milliseconds: 30), (timer) {
+      setState(() {});
+    });
   }
 
   @override
