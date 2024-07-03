@@ -95,6 +95,25 @@ class _StopwatchHomePageState extends State<StopwatchHomePage> {
               ),
             ),
             const SizedBox(height: 20.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: _startStopwatch,
+                  child: const Text('Start'),
+                ),
+                const SizedBox(width: 10.0),
+                ElevatedButton(
+                  onPressed: _stopStopwatch,
+                  child: const Text('Stop'),
+                ),
+                const SizedBox(width: 10.0),
+                ElevatedButton(
+                  onPressed: _resetStopwatch,
+                  child: const Text('Reset'),
+                ),
+              ],
+            ),
           ],
         ),
       ),
