@@ -62,6 +62,20 @@ class _StopwatchHomePageState extends State<StopwatchHomePage> {
     setState(() {});
   }
 
+  String _formatTime(int milliseconds) {
+    var seconds = (milliseconds / 1000).floor();
+    var minutes = (seconds / 60).floor();
+    var hours = (minutes / 60).floor();
+
+    seconds = seconds % 60;
+    minutes = minutes % 60;
+    hours = hours % 24;
+
+    var formattedTime = '${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}.${(milliseconds % 1000).toString().padLeft(3, '0')}';
+
+    return formattedTime;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
