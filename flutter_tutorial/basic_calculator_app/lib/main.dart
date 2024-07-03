@@ -74,6 +74,21 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
     });
   }
 
+  Widget buildButton(String buttonText) {
+    return Expanded(
+      child: OutlinedButton(
+        onPressed: () => buttonPressed(buttonText),
+        child: Text(
+          buttonText,
+          style: const TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
