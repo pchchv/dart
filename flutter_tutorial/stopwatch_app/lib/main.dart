@@ -28,4 +28,19 @@ class StopwatchHomePage extends StatefulWidget {
 }
 
 class _StopwatchHomePageState extends State<StopwatchHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Stopwatch'),
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+          ],
+        ),
+      ),
+    );
+  }
 }
