@@ -43,6 +43,20 @@ class _StopwatchHomePageState extends State<StopwatchHomePage> {
     });
   }
 
+  void _startStopwatch() {
+    if (!_stopwatch.isRunning) {
+      _stopwatch.start();
+      _startTimer();
+    }
+  }
+
+  void _stopStopwatch() {
+    if (_stopwatch.isRunning) {
+      _stopwatch.stop();
+      _timer.cancel();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
