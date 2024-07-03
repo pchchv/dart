@@ -57,6 +57,11 @@ class _StopwatchHomePageState extends State<StopwatchHomePage> {
     }
   }
 
+  void _resetStopwatch() {
+    _stopwatch.reset();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
