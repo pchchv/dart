@@ -95,8 +95,50 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
       appBar: AppBar(
         title: const Text('Basic Calculator'),
       ),
-      body: const Column(
+      body: Column(
         children: <Widget>[
+          Column(
+            children: [
+              Row(
+                children: <Widget>[
+                  buildButton("7"),
+                  buildButton("8"),
+                  buildButton("9"),
+                  buildButton("/"),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  buildButton("4"),
+                  buildButton("5"),
+                  buildButton("6"),
+                  buildButton("*"),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  buildButton("1"),
+                  buildButton("2"),
+                  buildButton("3"),
+                  buildButton("-"),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  buildButton("."),
+                  buildButton("0"),
+                  buildButton("00"),
+                  buildButton("+"),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  buildButton("C"),
+                  buildButton("="),
+                ],
+              ),
+            ],
+          )
         ],
       ),
     );
