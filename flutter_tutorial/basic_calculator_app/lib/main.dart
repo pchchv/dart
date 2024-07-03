@@ -97,6 +97,17 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
       ),
       body: Column(
         children: <Widget>[
+          Container(
+            alignment: Alignment.centerRight,
+            padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 12.0),
+            child: Text(
+              _result,
+              style: const TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const Expanded(
+            child: Divider(),
+          ),
           Column(
             children: [
               Row(
