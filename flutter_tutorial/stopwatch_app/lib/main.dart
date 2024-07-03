@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 void main() {
   runApp(const StopwatchApp());
@@ -82,10 +83,18 @@ class _StopwatchHomePageState extends State<StopwatchHomePage> {
       appBar: AppBar(
         title: const Text('Stopwatch'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              _formatTime(_stopwatch.elapsedMilliseconds),
+              style: const TextStyle(
+                fontSize: 48.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20.0),
           ],
         ),
       ),
