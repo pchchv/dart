@@ -28,6 +28,52 @@ class CalculatorHomePage extends StatefulWidget {
 }
 
 class _CalculatorHomePageState extends State<CalculatorHomePage> {
+  String _operation = "";
+  String _output = "0";
+  String _result = "0";
+  double _num1 = 0;
+  double _num2 = 0;
+
+  void buttonPressed(String buttonText) {
+    if (buttonText == "C") {
+      _output = "0";
+      _num1 = 0;
+      _num2 = 0;
+      _operation = "";
+    } else if (buttonText == "+" || buttonText == "-" || buttonText == "*" || buttonText == "/") {
+      _num1 = double.parse(_output);
+      _operation = buttonText;
+      _output = "0";
+    } else if (buttonText == ".") {
+      if (!_output.contains(".")) {
+        _output += buttonText;
+      }
+    } else if (buttonText == "=") {
+      _num2 = double.parse(_output);
+
+      if (_operation == "+") {
+        _result = (_num1 + _num2).toString();
+      } else if (_operation == "-") {
+        _result = (_num1 - _num2).toString();
+      } else if (_operation == "*") {
+        _result = (_num1 * _num2).toString();
+      } else if (_operation == "/") {
+        _result = (_num1 / _num2).toString();
+      }
+
+      _output = _result;
+      _operation = "";
+      _num1 = 0;
+      _num2 = 0;
+    } else {
+      _output += buttonText;
+    }
+
+    setState(() {
+      _result = double.parse(_output).toString();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
