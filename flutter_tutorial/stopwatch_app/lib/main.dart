@@ -28,6 +28,14 @@ class StopwatchHomePage extends StatefulWidget {
 }
 
 class _StopwatchHomePageState extends State<StopwatchHomePage> {
+  late Stopwatch _stopwatch;
+
+  @override
+  void initState() {
+    super.initState();
+    _stopwatch = Stopwatch();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
