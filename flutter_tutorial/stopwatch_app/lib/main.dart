@@ -14,6 +14,18 @@ class StopwatchApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const StopwatchHomePage(),
     );
   }
+}
+
+class StopwatchHomePage extends StatefulWidget {
+  const StopwatchHomePage({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _StopwatchHomePageState createState() => _StopwatchHomePageState();
+}
+
+class _StopwatchHomePageState extends State<StopwatchHomePage> {
 }
