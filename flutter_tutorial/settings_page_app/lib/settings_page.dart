@@ -45,3 +45,18 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 }
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  // ignore: library_private_types_in_public_api
+  static _MyAppState of(BuildContext context) =>
+      context.findAncestorStateOfType<_MyAppState>()!;
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+}
