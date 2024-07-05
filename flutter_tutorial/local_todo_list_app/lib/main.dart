@@ -14,6 +14,18 @@ class TodoApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const TodoList(),
     );
   }
+}
+
+class TodoList extends StatefulWidget {
+  const TodoList({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _TodoListState createState() => _TodoListState();
+}
+
+class _TodoListState extends State<TodoList> {
 }
