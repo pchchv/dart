@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
+import 'settings_page.dart';
 
 void main() {
   runApp(const SettingsApp());
@@ -18,6 +19,7 @@ class SettingsApp extends StatelessWidget {
           final isDarkMode = prefs.getBool('isDarkMode') ?? false;
           return MaterialApp(
             theme: isDarkMode ? ThemeData.dark() : ThemeData.light(),
+            home: const SettingsPage(),
           );
         }
         return const CircularProgressIndicator();
