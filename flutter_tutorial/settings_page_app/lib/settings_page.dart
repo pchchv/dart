@@ -14,6 +14,12 @@ class _SettingsPageState extends State<SettingsPage> {
   late SharedPreferences _prefs;
   bool _notificationsEnabled = false;
 
+  @override
+  void initState() {
+    super.initState();
+    _loadPreferences();
+  }
+
   Future<void> _loadPreferences() async {
     _prefs = await SharedPreferences.getInstance();
     setState(() {
