@@ -47,7 +47,28 @@ class _SettingsPageState extends State<SettingsPage> {
         title: const Text('Settings'),
       ),
       body: ListView(
-        children: const [
+        children: [
+          SwitchListTile(
+            title: const Text('Dark Mode'),
+            value: _isDarkMode,
+            onChanged: (bool value) {
+              setState(() {
+                _isDarkMode = value;
+              });
+              _savePreference('isDarkMode', value);
+              _updateTheme();
+            },
+          ),
+          SwitchListTile(
+            title: const Text('Enable Notifications'),
+            value: _notificationsEnabled,
+            onChanged: (bool value) {
+              setState(() {
+                _notificationsEnabled = value;
+              });
+              _savePreference('notificationsEnabled', value);
+            },
+          ),
         ],
       ),
     );
