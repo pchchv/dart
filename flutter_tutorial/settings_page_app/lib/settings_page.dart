@@ -59,4 +59,19 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  ThemeData _themeData = ThemeData.light();
+
+  void setTheme(ThemeData theme) {
+    setState(() {
+      _themeData = theme;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: _themeData,
+      home: const SettingsPage(),
+    );
+  }
 }
