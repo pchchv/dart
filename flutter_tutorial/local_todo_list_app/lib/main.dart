@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const TodoApp());
@@ -28,6 +29,22 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
+  List<String> _todoItems = [];
+
+  // Load to-do items from local storage
+  Future<void> _loadTodoItems() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _todoItems = (prefs.getStringList('todoItems') ?? []);
+    });
+  }
+
+    // Save to-do items to local storage
+  Future<void> _saveTodoItems() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setStringList('todoItems', _todoItems);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
