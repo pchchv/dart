@@ -31,6 +31,12 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   List<String> _todoItems = [];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadTodoItems();
+  }
+
   // Load to-do items from local storage
   Future<void> _loadTodoItems() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
