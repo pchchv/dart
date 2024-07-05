@@ -109,6 +109,11 @@ class _TodoListState extends State<TodoList> {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _promptAddTodoItem,
+        tooltip: 'Add task',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
