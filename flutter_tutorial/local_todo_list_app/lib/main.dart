@@ -97,6 +97,18 @@ class _TodoListState extends State<TodoList> {
       appBar: AppBar(
         title: const Text('To-Do List'),
       ),
+      body: ListView.builder(
+        itemCount: _todoItems.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(_todoItems[index]),
+            trailing: IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () => _removeTodoItem(index),
+            ),
+          );
+        },
+      ),
     );
   }
 }
