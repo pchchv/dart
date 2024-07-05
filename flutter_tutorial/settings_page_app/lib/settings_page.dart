@@ -32,6 +32,14 @@ class _SettingsPageState extends State<SettingsPage> {
     await _prefs.setBool(key, value);
   }
 
+  void _updateTheme() {
+    if (_isDarkMode) {
+      MyApp.of(context).setTheme(ThemeData.dark());
+    } else {
+      MyApp.of(context).setTheme(ThemeData.light());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
