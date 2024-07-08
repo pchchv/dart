@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const GameApp());
@@ -28,6 +29,7 @@ class ScoreTracker extends StatefulWidget {
 }
 
 class _ScoreTrackerState extends State<ScoreTracker> {
+  final TextEditingController _scoreController = TextEditingController();
   List<int> _highScores = [];
 
   @override
@@ -42,6 +44,24 @@ class _ScoreTrackerState extends State<ScoreTracker> {
       _highScores = (prefs.getStringList('highScores') ?? [])
           .map((score) => int.parse(score))
           .toList();
+    });
+  }
+
+  _addScore(int score) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _highScores.add(score);
+      _highScores.sort((b, a) => a.compareTo(b));
+      prefs.setStringList(
+          'highScores', _highScores.map((score) => score.toString()).toList());
+    });
+  }
+
+  _clearScores() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _highScores.clear();
+      prefs.remove('highScores');
     });
   }
 
