@@ -28,6 +28,23 @@ class ScoreTracker extends StatefulWidget {
 }
 
 class _ScoreTrackerState extends State<ScoreTracker> {
+  List<int> _highScores = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadHighScores();
+  }
+
+  _loadHighScores() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _highScores = (prefs.getStringList('highScores') ?? [])
+          .map((score) => int.parse(score))
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
