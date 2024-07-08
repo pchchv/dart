@@ -29,8 +29,10 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       _nameController.text = prefs.getString('name') ?? '';
       _emailController.text = prefs.getString('email') ?? '';
       String? imagePath = prefs.getString('profileImage');
-      _profileImage = File(imagePath);
-        });
+      if (imagePath != null) {
+        _profileImage = File(imagePath);
+      }
+    });
   }
 
   Future<void> _saveUserProfile() async {
