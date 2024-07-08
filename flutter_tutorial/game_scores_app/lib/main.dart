@@ -28,4 +28,19 @@ class ScoreTracker extends StatefulWidget {
 }
 
 class _ScoreTrackerState extends State<ScoreTracker> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Game Score Tracker'),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          children: <Widget>[
+          ],
+        ),
+      ),
+    );
+  }
 }
