@@ -71,8 +71,8 @@ class _ScoreTrackerState extends State<ScoreTracker> {
       appBar: AppBar(
         title: const Text('Game Score Tracker'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
             TextField(
@@ -100,6 +100,16 @@ class _ScoreTrackerState extends State<ScoreTracker> {
               child: const Text('Clear Scores'),
             ),
             const SizedBox(height: 20),
+            Expanded(
+              child: ListView.builder(
+                itemCount: _highScores.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text('Score: ${_highScores[index]}'),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
