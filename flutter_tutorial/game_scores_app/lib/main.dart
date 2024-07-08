@@ -14,6 +14,18 @@ class GameApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const ScoreTracker(),
     );
   }
+}
+
+class ScoreTracker extends StatefulWidget {
+  const ScoreTracker({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _ScoreTrackerState createState() => _ScoreTrackerState();
+}
+
+class _ScoreTrackerState extends State<ScoreTracker> {
 }
