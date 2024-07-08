@@ -75,6 +75,31 @@ class _ScoreTrackerState extends State<ScoreTracker> {
         padding: EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
+            TextField(
+              controller: _scoreController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(labelText: 'Enter your score'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                if (_scoreController.text.isNotEmpty) {
+                  int score = int.parse(_scoreController.text);
+                  _addScore(score);
+                  _scoreController.clear();
+                }
+              },
+              child: const Text('Add Score'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _clearScores,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+              ),
+              child: const Text('Clear Scores'),
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
