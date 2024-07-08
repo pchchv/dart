@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserProfileScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class UserProfileScreen extends StatefulWidget {
 
 class _UserProfileScreenState extends State<UserProfileScreen> {
   File? _profileImage;
+  final ImagePicker _picker = ImagePicker();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
 
@@ -29,6 +31,24 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       String? imagePath = prefs.getString('profileImage');
       _profileImage = File(imagePath);
         });
+  }
+
+  Future<void> _saveUserProfile() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('name', _nameController.text);
+    await prefs.setString('email', _emailController.text);
+    if (_profileImage != null) {
+      await prefs.setString('profileImage', _profileImage!.path);
+    }
+  }
+
+  Future<void> _pickImage() async {
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _profileImage = File(pickedFile.path);
+      });
+    }
   }
 
   @override
