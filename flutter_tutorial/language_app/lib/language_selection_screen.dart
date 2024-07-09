@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LanguageSelectionScreen extends StatefulWidget {
   const LanguageSelectionScreen({super.key});
@@ -9,6 +10,21 @@ class LanguageSelectionScreen extends StatefulWidget {
 }
 
 class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
+  String _selectedLanguage = 'en';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPreferredLanguage();
+  }
+
+  _loadPreferredLanguage() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _selectedLanguage = prefs.getString('preferred_language') ?? 'en';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
