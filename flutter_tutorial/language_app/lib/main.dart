@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? preferredLanguage = prefs.getString('preferred_language');
+  runApp(LanguageApp(preferredLanguage: preferredLanguage));
 }
 
 class LanguageApp extends StatelessWidget {
