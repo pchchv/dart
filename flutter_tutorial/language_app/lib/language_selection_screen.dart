@@ -36,10 +36,32 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
       appBar: AppBar(
         title: const Text('Select Language'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            RadioListTile<String>(
+              title: const Text('English'),
+              value: 'en',
+              groupValue: _selectedLanguage,
+              onChanged: (String? value) {
+                setState(() {
+                  _selectedLanguage = value!;
+                  _savePreferredLanguage(value);
+                });
+              },
+            ),
+            RadioListTile<String>(
+              title: const Text('Spanish'),
+              value: 'es',
+              groupValue: _selectedLanguage,
+              onChanged: (String? value) {
+                setState(() {
+                  _selectedLanguage = value!;
+                  _savePreferredLanguage(value);
+                });
+              },
+            ),
           ],
         ),
       ),
