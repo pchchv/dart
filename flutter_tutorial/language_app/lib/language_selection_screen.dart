@@ -25,6 +25,11 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
     });
   }
 
+  _savePreferredLanguage(String languageCode) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('preferred_language', languageCode);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
