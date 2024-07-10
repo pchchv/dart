@@ -15,8 +15,24 @@ class ThemeApp extends StatelessWidget {
         return MaterialApp(
           title: 'Theme Switcher',
           theme: themeNotifier.darkTheme ? ThemeData.dark() : ThemeData.light(),
+          home: const HomeScreen(),
         );
       },
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Theme Switcher'),
+      ),
+      body: const Center(
+      ),
     );
   }
 }
