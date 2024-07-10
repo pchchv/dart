@@ -17,4 +17,9 @@ class ThemeNotifier extends ChangeNotifier {
     _darkTheme = _prefs.getBool(key) ?? false;
     notifyListeners();
   }
+
+  Future<void> _saveToPrefs() async {
+    await _initPrefs();
+    _prefs.setBool(key, _darkTheme);
+  }
 }
