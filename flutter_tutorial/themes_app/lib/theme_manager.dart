@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeNotifier extends ChangeNotifier {
   final String key = "theme";
@@ -6,4 +7,14 @@ class ThemeNotifier extends ChangeNotifier {
   late bool _darkTheme;
 
   bool get darkTheme => _darkTheme;
+
+  Future<void> _initPrefs() async {
+    _prefs = await SharedPreferences.getInstance();
+  }
+
+  Future<void> _loadFromPrefs() async {
+    await _initPrefs();
+    _darkTheme = _prefs.getBool(key) ?? false;
+    notifyListeners();
+  }
 }
