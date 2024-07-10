@@ -8,6 +8,17 @@ class ThemeNotifier extends ChangeNotifier {
 
   bool get darkTheme => _darkTheme;
 
+  ThemeNotifier() {
+    _darkTheme = false;
+    _loadFromPrefs();
+  }
+
+  toggleTheme() {
+    _darkTheme = !_darkTheme;
+    _saveToPrefs();
+    notifyListeners();
+  }
+
   Future<void> _initPrefs() async {
     _prefs = await SharedPreferences.getInstance();
   }
