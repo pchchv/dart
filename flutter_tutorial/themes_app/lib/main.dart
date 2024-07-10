@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 import 'theme_manager.dart';
 
 void main() {
+  runApp(
+    ChangeNotifierProvider<ThemeNotifier>(
+      create: (_) => ThemeNotifier(),
+      child: const ThemeApp(),
+    ),
+  );
 }
 
 class ThemeApp extends StatelessWidget {
