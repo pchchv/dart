@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
+
 void main() {
+  runApp(const ShoppingApp());
 }
 
 class ShoppingApp extends StatelessWidget {
