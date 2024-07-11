@@ -85,6 +85,18 @@ class _ShoppingHomePageState extends State<ShoppingHomePage> {
           ),
         ],
       ),
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(items[index]),
+            trailing: IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () => _addItemToCart(items[index]),
+            ),
+          );
+        },
+      ),
     );
   }
 }
