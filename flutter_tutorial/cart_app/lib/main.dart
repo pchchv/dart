@@ -86,6 +86,18 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Cart'),
       ),
+      body: ListView.builder(
+        itemCount: cart.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(cart[index]),
+            trailing: IconButton(
+              icon: const Icon(Icons.remove),
+              onPressed: () => removeItemFromCart(cart[index]),
+            ),
+          );
+        },
+      ),
     );
   }
 }
