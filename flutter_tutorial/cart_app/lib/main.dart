@@ -52,7 +52,21 @@ class _ShoppingHomePageState extends State<ShoppingHomePage> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('cart', jsonEncode(cart));
   }
-  
+
+  _addItemToCart(String item) {
+    setState(() {
+      cart.add(item);
+    });
+    _saveCart();
+  }
+
+  _removeItemFromCart(String item) {
+    setState(() {
+      cart.remove(item);
+    });
+    _saveCart();
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
