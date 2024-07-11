@@ -79,4 +79,13 @@ class CartPage extends StatelessWidget {
   final Function(String) removeItemFromCart;
 
   CartPage(this.cart, this.removeItemFromCart, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Cart'),
+      ),
+    );
+  }
 }
