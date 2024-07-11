@@ -30,6 +30,7 @@ class ShoppingHomePage extends StatefulWidget {
 }
 
 class _ShoppingHomePageState extends State<ShoppingHomePage> {
+  List<String> items = ["Apples", "Bananas", "Oranges", "Grapes"];
   List<String> cart = [];
 
   @override
@@ -69,7 +70,21 @@ class _ShoppingHomePageState extends State<ShoppingHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Shopping App'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CartPage(cart, _removeItemFromCart)),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
