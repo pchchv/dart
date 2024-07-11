@@ -1,4 +1,6 @@
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
+import 'dart:convert';
 
 void main() {
   runApp(const ShoppingApp());
@@ -28,6 +30,29 @@ class ShoppingHomePage extends StatefulWidget {
 }
 
 class _ShoppingHomePageState extends State<ShoppingHomePage> {
+  List<String> cart = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCart();
+  }
+
+  _loadCart() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? cartString = prefs.getString('cart');
+    if (cartString != null) {
+      setState(() {
+        cart = List<String>.from(jsonDecode(cartString));
+      });
+    }
+  }
+
+  _saveCart() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('cart', jsonEncode(cart));
+  }
+  
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
