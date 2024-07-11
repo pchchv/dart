@@ -73,3 +73,10 @@ class _ShoppingHomePageState extends State<ShoppingHomePage> {
     );
   }
 }
+
+class CartPage extends StatelessWidget {
+  final List<String> cart;
+  final Function(String) removeItemFromCart;
+
+  CartPage(this.cart, this.removeItemFromCart, {super.key});
+}
