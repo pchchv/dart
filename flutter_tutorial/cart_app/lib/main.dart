@@ -28,4 +28,9 @@ class ShoppingHomePage extends StatefulWidget {
 }
 
 class _ShoppingHomePageState extends State<ShoppingHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+    );
+  }
 }
