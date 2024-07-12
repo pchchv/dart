@@ -54,7 +54,26 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
             ),
         ],
       ),
-      body: const Padding(padding: null,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: _titleController,
+              decoration: const InputDecoration(labelText: 'Title'),
+            ),
+            TextField(
+              controller: _contentController,
+              decoration: const InputDecoration(labelText: 'Content'),
+              maxLines: null,
+            ),
+            TextField(
+              controller: _categoryController,
+              decoration: const InputDecoration(labelText: 'Category'),
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
