@@ -72,6 +72,32 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
               decoration: const InputDecoration(labelText: 'Category'),
             ),
             const SizedBox(height: 20),
+            ElevatedButton(
+              child: Text(widget.note == null ? 'Add Note' : 'Update Note'),
+              onPressed: () {
+                final title = _titleController.text;
+                final content = _contentController.text;
+                final category = _categoryController.text;
+
+                if (widget.note == null) {
+                  final newNote = Note(
+                    title: title,
+                    content: content,
+                    category: category,
+                  );
+                  Provider.of<NoteProvider>(context, listen: false)
+                      .addNote(newNote);
+                } else {
+                  widget.note!.title = title;
+                  widget.note!.content = content;
+                  widget.note!.category = category;
+                  Provider.of<NoteProvider>(context, listen: false)
+                      .updateNote(widget.note!);
+                }
+
+                Navigator.of(context).pop();
+              },
+            ),
           ],
         ),
       ),
