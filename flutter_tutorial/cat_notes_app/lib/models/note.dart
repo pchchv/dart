@@ -1,16 +1,17 @@
 import 'package:hive/hive.dart';
 
+part 'note.g.dart';
 
 @HiveType(typeId: 0)
 class Note extends HiveObject {
   @HiveField(0)
-  final String title;
+  late final String title;
 
   @HiveField(1)
-  final String content;
+  late final String content;
 
   @HiveField(2)
-  final String category;
+  late final String category;
 
   Note({
     required this.title,
