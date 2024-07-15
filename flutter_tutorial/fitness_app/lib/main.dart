@@ -71,10 +71,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Fitness App'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const Text('Steps Taken:', style: TextStyle(fontSize: 24)),
+            Text('$_stepCount', style: const TextStyle(fontSize: 48)),
           ],
         ),
       ),
