@@ -1,3 +1,4 @@
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,6 +29,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _stepCount = 0;
+
+  void _loadStepCount() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _stepCount = prefs.getInt('stepCount') ?? 0;
+    });
+  }
+
+  void _saveStepCount() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setInt('stepCount', _stepCount);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
