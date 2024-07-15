@@ -34,6 +34,13 @@ class _HomePageState extends State<HomePage> {
   late Stream<StepCount> _stepCountStream;
   int _stepCount = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    _loadStepCount();
+    _initializePedometer();
+  }
+
   void _loadStepCount() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
