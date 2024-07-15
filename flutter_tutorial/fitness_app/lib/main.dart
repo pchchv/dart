@@ -77,6 +77,15 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             const Text('Steps Taken:', style: TextStyle(fontSize: 24)),
             Text('$_stepCount', style: const TextStyle(fontSize: 48)),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _stepCount = 0;
+                  _saveStepCount();
+                });
+              },
+              child: const Text('Reset Steps'),
+            ),
           ],
         ),
       ),
