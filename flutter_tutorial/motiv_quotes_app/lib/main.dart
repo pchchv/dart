@@ -28,4 +28,12 @@ class QuoteListScreen extends StatefulWidget {
 }
 
 class _QuoteListScreenState extends State<QuoteListScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Motivational Quotes'),
+      ),
+    );
+  }
 }
