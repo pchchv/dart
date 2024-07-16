@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  runApp(const QuotesApp());
 }
 
 class QuotesApp extends StatelessWidget {
