@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(const QuotesApp());
@@ -28,11 +29,37 @@ class QuoteListScreen extends StatefulWidget {
 }
 
 class _QuoteListScreenState extends State<QuoteListScreen> {
+  late Future<List<Quote>> futureQuotes;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Motivational Quotes'),
+      ),
+      body: FutureBuilder<List<Quote>>(
+        future: futureQuotes,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return const Center(child: Text('No quotes found'));
+          } else {
+            List<Quote> quotes = snapshot.data!;
+            return ListView.builder(
+              itemCount: quotes.length,
+              itemBuilder: (context, index) {
+                Quote quote = quotes[index];
+                return ListTile(
+                  title: Text(quote.text),
+                  subtitle: Text(quote.author),
+                );
+              },
+            );
+          }
+        },
       ),
     );
   }
