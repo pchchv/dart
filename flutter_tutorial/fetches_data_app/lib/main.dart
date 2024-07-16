@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'user.dart';
+import 'api_service.dart';
 
 void main() {
   runApp(const FetchApp());
@@ -30,6 +31,12 @@ class UserListScreen extends StatefulWidget {
 
 class _UserListScreenState extends State<UserListScreen> {
   late Future<List<User>> futureUsers;
+
+  @override
+  void initState() {
+    super.initState();
+    futureUsers = ApiService.fetchUsers();
+  }
 
   @override
   Widget build(BuildContext context) {
