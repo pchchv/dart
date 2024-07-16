@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'api_service.dart';
 import 'quote.dart';
 
 void main() {
@@ -30,6 +31,12 @@ class QuoteListScreen extends StatefulWidget {
 
 class _QuoteListScreenState extends State<QuoteListScreen> {
   late Future<List<Quote>> futureQuotes;
+
+  @override
+  void initState() {
+    super.initState();
+    futureQuotes = ApiService.fetchQuotes();
+  }
 
   @override
   Widget build(BuildContext context) {
