@@ -1,16 +1,4 @@
 # motiv_quotes_app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Challenge from [Flutter Tutorial](https://flutter-tutorial.net/working-with-api/fetch-data-from-rest-api-in-flutter/):
+Create a motivational quotes app that fetches quotes from a REST API and displays them in a list. Here is URL to fetch quotes from:```https://jsonguide.technologychannel.org/quotes.json```
