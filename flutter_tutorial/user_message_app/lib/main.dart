@@ -28,4 +28,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Flutter Form Example'),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Form(
+          child: Column(
+            children: <Widget>[
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
