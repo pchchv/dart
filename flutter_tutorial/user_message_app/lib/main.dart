@@ -86,6 +86,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   return null;
                 },
               ),
+              TextFormField(
+                controller: _messageController,
+                decoration: const InputDecoration(labelText: 'Message'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a message';
+                  }
+                  return null;
+                },
+              ),
             ],
           ),
         ),
