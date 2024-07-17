@@ -96,6 +96,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   return null;
                 },
               ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _submitForm,
+                child: const Text('Submit'),
+              ),
             ],
           ),
         ),
