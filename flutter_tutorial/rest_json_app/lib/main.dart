@@ -10,6 +10,18 @@ class JSONApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      home: ItemsScreen(),
     );
   }
+}
+
+class ItemsScreen extends StatefulWidget {
+  const ItemsScreen({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _ItemsScreenState createState() => _ItemsScreenState();
+}
+
+class _ItemsScreenState extends State<ItemsScreen> {
 }
