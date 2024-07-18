@@ -31,6 +31,31 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+  final WeatherService _weatherService = WeatherService();
+  Map<String, dynamic>? _weatherData;
+  bool _isLoading = false;
+  String _city = 'London';
+
+  void _fetchWeather() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      final data = await _weatherService.fetchWeather(_city);
+      setState(() {
+        _weatherData = data;
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Failed to load weather data')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
