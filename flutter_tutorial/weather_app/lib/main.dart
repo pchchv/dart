@@ -62,10 +62,44 @@ class _WeatherScreenState extends State<WeatherScreen> {
       appBar: AppBar(
         title: const Text('Weather App'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            TextField(
+              decoration: const InputDecoration(labelText: 'Enter City'),
+              onChanged: (value) {
+                setState(() {
+                  _city = value;
+                });
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _fetchWeather,
+              child: const Text('Get Weather'),
+            ),
+            if (_isLoading)
+              const CircularProgressIndicator(),
+            if (_weatherData != null)
+              Expanded(
+                child: ListView(
+                  children: [
+                    ListTile(
+                      title: Text('Temperature: ${_weatherData!['main']['temp']}°C'),
+                    ),
+                    ListTile(
+                      title: Text('Weather: ${_weatherData!['weather'][0]['description']}'),
+                    ),
+                    ListTile(
+                      title: Text('Humidity: ${_weatherData!['main']['humidity']}%'),
+                    ),
+                    ListTile(
+                      title: Text('Wind Speed: ${_weatherData!['wind']['speed']} m/s'),
+                    ),
+                  ],
+                ),
+              ),
           ],
         ),
       ),
