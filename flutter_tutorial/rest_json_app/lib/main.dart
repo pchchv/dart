@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'api_service.dart';
+import 'model.dart';
 
 void main() {
   runApp(const JSONApp());
@@ -24,6 +26,14 @@ class ItemsScreen extends StatefulWidget {
 }
 
 class _ItemsScreenState extends State<ItemsScreen> {
+  late Future<List<Item>> futureItems;
+
+  @override
+  void initState() {
+    super.initState();
+    futureItems = ApiService().fetchItems();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
