@@ -105,7 +105,7 @@ class CartPage extends StatelessWidget {
   final List<String> cart;
   final Function(String) removeItemFromCart;
 
-  CartPage(this.cart, this.removeItemFromCart, {super.key});
+  const CartPage(this.cart, this.removeItemFromCart, {super.key});
 
   @override
   Widget build(BuildContext context) {
