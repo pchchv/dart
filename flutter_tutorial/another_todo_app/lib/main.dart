@@ -1,3 +1,4 @@
+import 'todo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -61,22 +62,5 @@ class TodoPage extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-
-class Todo extends ChangeNotifier {
-  final List<String> _todos = [];
-
-  List<String> get todos => _todos;
-
-  void add(String todo) {
-    _todos.add(todo);
-    notifyListeners();
-  }
-
-  void remove(String todo) {
-    _todos.remove(todo);
-    notifyListeners();
   }
 }
