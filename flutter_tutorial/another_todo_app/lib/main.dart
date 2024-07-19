@@ -84,6 +84,7 @@ class EditableListTile extends StatefulWidget {
 
 class _EditableListTileState extends State<EditableListTile> {
   late TextEditingController _controller;
+  bool _isEditing = false;
 
   @override
   void initState() {
@@ -99,7 +100,43 @@ class _EditableListTileState extends State<EditableListTile> {
 
   @override
   Widget build(BuildContext context) {
-    return const ListTile(
+    return ListTile(
+      title: _isEditing
+          ? TextField(
+              controller: _controller,
+              onSubmitted: (newValue) {
+                widget.onEdit(newValue);
+                setState(() {
+                  _isEditing = false;
+                });
+              },
+            )
+          : Text(widget.initialValue),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+            icon: Icon(_isEditing ? Icons.check : Icons.edit),
+            onPressed: () {
+              setState(() {
+                if (_isEditing) {
+                  widget.onEdit(_controller.text);
+                }
+                _isEditing = !_isEditing;
+              });
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.delete),
+            onPressed: widget.onDelete,
+          ),
+        ],
+      ),
+      onTap: () {
+        setState(() {
+          _isEditing = true;
+        });
+      },
     );
   }
 }
