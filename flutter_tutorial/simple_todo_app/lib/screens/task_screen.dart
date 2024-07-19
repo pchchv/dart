@@ -1,7 +1,7 @@
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import '../widgets/task_list.dart';
-import '../task_data.dart';
+import '/widgets/task_list.dart';
+import '/task_data.dart';
 
 class TaskScreen extends StatelessWidget {
   const TaskScreen({super.key});
