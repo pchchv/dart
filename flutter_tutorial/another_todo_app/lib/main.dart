@@ -83,6 +83,20 @@ class EditableListTile extends StatefulWidget {
 }
 
 class _EditableListTileState extends State<EditableListTile> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(text: widget.initialValue);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return const ListTile(
