@@ -47,14 +47,14 @@ class TodoPage extends StatelessWidget {
             child: ListView.builder(
               itemCount: todo.todos.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(todo.todos[index]),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.delete),
-                    onPressed: () {
-                      todo.remove(todo.todos[index]);
-                    },
-                  ),
+                return EditableListTile(
+                  initialValue: todo.todos[index],
+                  onEdit: (newValue) {
+                    todo.edit(index, newValue);
+                  },
+                  onDelete: () {
+                    todo.remove(todo.todos[index]);
+                  },
                 );
               },
             ),
