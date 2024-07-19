@@ -64,3 +64,23 @@ class TodoPage extends StatelessWidget {
     );
   }
 }
+
+class EditableListTile extends StatefulWidget {
+  final String initialValue;
+  final ValueChanged<String> onEdit;
+  final VoidCallback onDelete;
+
+  const EditableListTile({
+    super.key,
+    required this.initialValue,
+    required this.onEdit,
+    required this.onDelete,
+  });
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _EditableListTileState createState() => _EditableListTileState();
+}
+
+class _EditableListTileState extends State<EditableListTile> {
+}
