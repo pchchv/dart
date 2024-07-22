@@ -32,6 +32,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TimeOfDay _selectedTime = TimeOfDay.now();
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
   @override
@@ -112,10 +113,28 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Local Notifications App'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              "Selected time: ${_selectedTime.format(context)}",
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _pickTime(context),
+              child: const Text('Pick Time'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _scheduleNotification(_selectedTime),
+              child: const Text('Schedule Notification'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _cancelAllNotifications,
+              child: const Text('Cancel All Notifications'),
+            ),
           ],
         ),
       ),
