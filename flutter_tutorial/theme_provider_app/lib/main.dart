@@ -20,6 +20,10 @@ class ThemesApp extends StatelessWidget {
 
     return MaterialApp(
       theme: themeNotifier.currentTheme,
+      home: const HomeScreen(),
     );
   }
+}
+
+class HomeScreen extends StatelessWidget {
 }
