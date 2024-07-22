@@ -1,4 +1,6 @@
+import 'theme_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
 }
@@ -8,7 +10,10 @@ class ThemesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
+    return MaterialApp(
+      theme: themeNotifier.currentTheme,
     );
   }
 }
