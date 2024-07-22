@@ -73,6 +73,39 @@ class _HomePageState extends State<HomePage> {
     return scheduledDate;
   }
 
+  Future<void> _scheduleNotification(TimeOfDay time) async {
+    var scheduledNotificationDateTime = _nextInstanceOfTime(time);
+    var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
+        'your_channel_id', 'your_channel_name', channelDescription: 'your_channel_description',
+        importance: Importance.max, priority: Priority.high, ticker: 'ticker');
+    var iOSPlatformChannelSpecifics = const DarwinNotificationDetails();
+    var platformChannelSpecifics = NotificationDetails(
+        android: androidPlatformChannelSpecifics,
+        iOS: iOSPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.zonedSchedule(
+      0,
+      'Scheduled Notification',
+      'This is your scheduled notification',
+      scheduledNotificationDateTime,
+      platformChannelSpecifics,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+      matchDateTimeComponents: DateTimeComponents.time,
+    );
+  }
+
+  _pickTime(BuildContext context) async {
+    final TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: _selectedTime,
+    );
+    if (picked != null && picked != _selectedTime) {
+      setState(() {
+        _selectedTime = picked;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
