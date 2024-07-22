@@ -30,11 +30,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Theme Switcher'),
       ),
-      body: const Center(
+      body: Center(
+        child: SwitchListTile(
+          title: const Text('Dark Theme'),
+          value: themeNotifier.isDarkTheme,
+          onChanged: (value) {
+            themeNotifier.toggleTheme();
+          },
+        ),
       ),
     );
   }
