@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() async {
+  runApp(const NotifyApp());
 }
 
 class NotifyApp extends StatelessWidget {
