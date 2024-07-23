@@ -32,6 +32,16 @@ class TasksApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => TaskProvider(),
+      child: MaterialApp(
+        title: 'Task Reminder App',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const HomePage(title: 'Task Reminder App'),
+      ),
+    );
   }
 }
 
