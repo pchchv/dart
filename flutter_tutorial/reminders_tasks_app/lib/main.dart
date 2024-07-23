@@ -102,6 +102,14 @@ class _HomePageState extends State<HomePage> {
               decoration: const InputDecoration(labelText: 'Task Title'),
             ),
           ),
+          ElevatedButton(
+            onPressed: () => _selectDateTime(context),
+            child: const Text('Select Date & Time'),
+          ),
+          ElevatedButton(
+            onPressed: _addTask,
+            child: const Text('Add Task'),
+          ),
         ],
       ),
     );
