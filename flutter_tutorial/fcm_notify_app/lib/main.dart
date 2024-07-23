@@ -36,6 +36,27 @@ class PushNotificationDemo extends StatefulWidget {
 
 class _PushNotificationDemoState extends State<PushNotificationDemo> {
   @override
+  void initState() {
+    super.initState();
+    FirebaseMessaging.instance.getInitialMessage().then((message) {
+      if (message != null) {
+        log('Received a message at app launch: ${message.messageId}');
+      }
+    });
+
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      log('Received a message while in foreground: ${message.messageId}');
+      if (message.notification != null) {
+        log('Message also contained a notification: ${message.notification}');
+      }
+    });
+
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      log('Message clicked: ${message.messageId}');
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Push Notification Demo')),
