@@ -12,6 +12,24 @@ void main() {
 }
 
 class TasksApp extends StatelessWidget {
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+
+  TasksApp({super.key}) {
+    // Initialization settings for Android and iOS
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+    const DarwinInitializationSettings initializationSettingsDarwin =
+        DarwinInitializationSettings();
+
+    const InitializationSettings initializationSettings = InitializationSettings(
+      android: initializationSettingsAndroid,
+      iOS: initializationSettingsDarwin,
+    );
+
+    flutterLocalNotificationsPlugin.initialize(initializationSettings);
+  }
+
   @override
   Widget build(BuildContext context) {
   }
