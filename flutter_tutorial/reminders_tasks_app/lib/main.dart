@@ -138,6 +138,22 @@ class _HomePageState extends State<HomePage> {
             onPressed: _addTask,
             child: const Text('Add Task'),
           ),
+          Expanded(
+            child: Consumer<TaskProvider>(
+              builder: (context, taskProvider, child) {
+                return ListView.builder(
+                  itemCount: taskProvider.tasks.length,
+                  itemBuilder: (context, index) {
+                    final task = taskProvider.tasks[index];
+                    return ListTile(
+                      title: Text(task.title),
+                      subtitle: Text(task.dateTime.toString()),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
