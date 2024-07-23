@@ -23,4 +23,11 @@ class PushNotificationDemo extends StatefulWidget {
 }
 
 class _PushNotificationDemoState extends State<PushNotificationDemo> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Push Notification Demo')),
+      body: const Center(child: Text('Listening for notifications...')),
+    );
+  }
 }
