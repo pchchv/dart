@@ -93,8 +93,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: const Column(
+      body: Column(
         children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _taskController,
+              decoration: const InputDecoration(labelText: 'Task Title'),
+            ),
+          ),
         ],
       ),
     );
