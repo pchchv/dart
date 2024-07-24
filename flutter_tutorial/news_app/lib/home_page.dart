@@ -1,7 +1,5 @@
-import 'dart:developer';
-
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/article.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,28 +10,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
+  late Future<List<Article>> _articlesFuture;
 
   @override
   void initState() {
     super.initState();
-
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      // Handle foreground message
-      if (message.notification != null) {
-        log('Message also contained a notification: ${message.notification}');
-      }
-    });
-
-    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      // Handle when the app is opened from a notification
-      log('Message clicked!');
-    });
-
-    _firebaseMessaging.getToken().then((String? token) {
-      assert(token != null);
-      log("Push Messaging token: $token");
-    });
+    _articlesFuture = fetchArticles();
   }
 
   @override
@@ -42,8 +24,33 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('News App'),
       ),
-      body: const Center(
-        child: Text('Welcome to the News App!'),
+      body: FutureBuilder<List<Article>>(
+        future: _articlesFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return const Center(child: Text('No articles found'));
+          }
+
+          final articles = snapshot.data!;
+          return ListView.builder(
+            itemCount: articles.length,
+            itemBuilder: (context, index) {
+              final article = articles[index];
+              return ListTile(
+                // ignore: unnecessary_null_comparison
+                leading: article.urlToImage != null
+                    ? Image.network(article.urlToImage, fit: BoxFit.cover, width: 100)
+                    : null,
+                title: Text(article.title),
+                subtitle: Text(article.description),
+              );
+            },
+          );
+        },
       ),
     );
   }
