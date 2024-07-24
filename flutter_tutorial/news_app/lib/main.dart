@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:news_app/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -17,6 +18,7 @@ class NewsApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const HomePage(),
     );
   }
 }
