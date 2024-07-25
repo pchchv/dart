@@ -87,10 +87,20 @@ class _SoundSelectorPageState extends State<SoundSelectorPage> {
       appBar: AppBar(
         title: const Text("Notification Sounds App"),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            ElevatedButton(
+              onPressed: _pickSound,
+              child: const Text("Pick Notification Sound"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _showNotification(customSoundPath);
+              },
+              child: const Text("Show Notification with Custom Sound"),
+            ),
           ],
         ),
       ),
