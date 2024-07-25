@@ -1,3 +1,4 @@
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,6 +29,27 @@ class SoundSelectorPage extends StatefulWidget {
 }
 
 class _SoundSelectorPageState extends State<SoundSelectorPage> {
+  late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+
+  Future<void> _showNotification(String soundPath) async {
+    var androidPlatformChannelSpecifics = AndroidNotificationDetails(
+        'your_channel_id', 'your_channel_name',
+        importance: Importance.max,
+        priority: Priority.high,
+        // ignore: unnecessary_null_comparison
+        sound: soundPath != null ? RawResourceAndroidNotificationSound(soundPath.split('/').last.split('.').first) : null);
+    
+    var iOSPlatformChannelSpecifics = DarwinNotificationDetails(
+        sound: soundPath.split('/').last);
+    
+    var platformChannelSpecifics = NotificationDetails(
+        android: androidPlatformChannelSpecifics, iOS: iOSPlatformChannelSpecifics);
+    
+    await flutterLocalNotificationsPlugin.show(
+        0, 'Custom Sound Notification', 'This is the body of the notification', platformChannelSpecifics,
+        payload: 'item x');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
