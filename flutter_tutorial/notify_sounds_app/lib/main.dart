@@ -28,4 +28,19 @@ class SoundSelectorPage extends StatefulWidget {
 }
 
 class _SoundSelectorPageState extends State<SoundSelectorPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Notification Sounds App"),
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+          ],
+        ),
+      ),
+    );
+  }
 }
