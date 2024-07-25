@@ -33,8 +33,8 @@ class SoundSelectorPage extends StatefulWidget {
 }
 
 class _SoundSelectorPageState extends State<SoundSelectorPage> {
-  AudioPlayer audioPlayer;
   late String customSoundPath;
+  late AudioPlayer audioPlayer;
   late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
   @override
