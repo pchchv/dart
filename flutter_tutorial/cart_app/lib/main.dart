@@ -42,12 +42,10 @@ class _ShoppingHomePageState extends State<ShoppingHomePage> {
   _loadCart() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? cartString = prefs.getString('cart');
-    if (cartString != null) {
-      setState(() {
-        cart = List<String>.from(jsonDecode(cartString));
-      });
+    setState(() {
+      cart = List<String>.from(jsonDecode(cartString!));
+    });
     }
-  }
 
   _saveCart() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
