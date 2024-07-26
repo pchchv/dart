@@ -28,4 +28,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Actionable Notifications"),
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Press the button to receive a notification',
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: const FloatingActionButton(onPressed: () {},
+      ),
+    );
+  }
 }
