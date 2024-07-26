@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,27 +28,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Future<void> onSelectNotification(String payload) async {
-    showDialog(
-      context: context,
-      builder: (_) {
-        return AlertDialog(
-          title: const Text("Here is your payload"),
-          content: Text("Payload: $payload"),
-        );
-      },
-    );
-  }
-
-  Future<void> handleNotificationAction(String actionId, String input) async {
-    // Handle the action here
-    if (actionId == 'reply') {
-      log('User replied: $input');
-    } else if (actionId == 'mark_as_read') {
-      log('Notification marked as read');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
