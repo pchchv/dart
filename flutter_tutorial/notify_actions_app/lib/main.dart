@@ -29,6 +29,42 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+
+  Future<void> showNotification() async {
+    var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
+      'your_channel_id',
+      'your_channel_name',
+      channelDescription: 'your_channel_description',
+      importance: Importance.max,
+      priority: Priority.high,
+      playSound: true,
+      ticker: 'ticker',
+      actions: <AndroidNotificationAction>[
+        AndroidNotificationAction(
+          'mark_as_read',
+          'Mark as Read',
+        ),
+        AndroidNotificationAction(
+          'reply',
+          'Reply',
+        ),
+      ],
+    );
+
+    var iOSPlatformChannelSpecifics = const DarwinNotificationDetails();
+    var platformChannelSpecifics = NotificationDetails(
+        android: androidPlatformChannelSpecifics, iOS: iOSPlatformChannelSpecifics);
+
+    await flutterLocalNotificationsPlugin.show(
+      0,
+      'New Notification',
+      'This is the body of the notification',
+      platformChannelSpecifics,
+      payload: 'item id 2',
+    );
+  }
+
   void onDidReceiveNotificationResponse(NotificationResponse notificationResponse) {
     final String? payload = notificationResponse.payload;
     if (notificationResponse.actionId == 'reply') {
