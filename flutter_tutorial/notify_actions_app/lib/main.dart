@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 void main() {
   runApp(const NotifyApp());
@@ -28,6 +29,35 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void onDidReceiveNotificationResponse(NotificationResponse notificationResponse) {
+    final String? payload = notificationResponse.payload;
+    if (notificationResponse.actionId == 'reply') {
+      showDialog(
+        context: context,
+        builder: (_) => const AlertDialog(
+          title: Text("Reply"),
+          content: Text("User selected: Reply"),
+        ),
+      );
+    } else if (notificationResponse.actionId == 'mark_as_read') {
+      showDialog(
+        context: context,
+        builder: (_) => const AlertDialog(
+          title: Text("Mark as Read"),
+          content: Text("Notification marked as read."),
+        ),
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: const Text("Notification Clicked"),
+          content: Text("Payload: $payload"),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +74,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: const FloatingActionButton(onPressed: () {},
+      floatingActionButton: FloatingActionButton(onPressed: () {  },
       ),
     );
   }
