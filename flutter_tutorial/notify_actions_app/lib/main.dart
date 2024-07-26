@@ -31,6 +31,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
+  @override
+  void initState() {
+    super.initState();
+    var initializationSettingsAndroid = const AndroidInitializationSettings('app_icon');
+    var initializationSettingsIOS = const DarwinInitializationSettings();
+    var initializationSettings = InitializationSettings(
+        android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
+
+    flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+    flutterLocalNotificationsPlugin.initialize(initializationSettings,
+        onDidReceiveNotificationResponse: onDidReceiveNotificationResponse);
+  }
+
   Future<void> showNotification() async {
     var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
       'your_channel_id',
