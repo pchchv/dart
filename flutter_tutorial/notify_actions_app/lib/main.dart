@@ -123,7 +123,10 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {  },
+      floatingActionButton: FloatingActionButton(
+        onPressed: showNotification,
+        tooltip: 'Show Notification',
+        child: const Icon(Icons.notifications),
       ),
     );
   }
